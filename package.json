@@ -1,16 +1,14 @@
 {
-  "name": "thebeautyofdust",
-  "version": "1.0.1",
+  "name": "yourProjectNameHere",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "test-watch": "jest --watch",
-    "heroku-prebuild": "npm install --dev",
     "dev": "webpack-dev-server --open --hot --config webpack.config.js --mode=development",
     "build": "webpack --config webpack.config.js --mode=production",
-    "serve": "webpack-dev-server --mode=production --config webpack.config.js ",
-    "start": "node main.bundle.js"
+    "serve": "webpack-dev-server --mode=production --config webpack.config.js "
   },
   "author": "",
   "license": "ISC",
@@ -29,7 +27,7 @@
     "autoprefixer": "^10.2.3",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
-    "file-loader": "^6.2.0",
+    "file-loader": "^6.1.1",
     "html-webpack-plugin": "^4.5.0",
     "jest": "^26.6.3",
     "jest-cli": "^26.6.3",
@@ -48,7 +46,6 @@
     "babel-plugin-react-css-modules": "^5.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0",
-    "styled-components": "^5.2.3"
+    "react-router-dom": "^5.2.0"
   }
 }

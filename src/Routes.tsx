@@ -1,14 +1,11 @@
 import * as React from "react";
 import { Route } from "react-router-dom";
-import Main from "./Components/Main/Main";
-
-import About from "./Components/About/About";
+import Main from "./Layout/Main/Main";
 
 const Routes: React.FC = () => {
   return (
     <>
-      <Route path="/" component={Main} />
-      <Route path="/about" component={About} />
+      <Route path={"/main"} component={Main} />
     </>
   );
 };

@@ -7,9 +7,6 @@ import "./index.css";
 const App: React.FC = () => (
   <HashRouter>
     <Routes />
-    <div styleName="testClass">
-      Your create-react-lite application is ready.
-    </div>
   </HashRouter>
 );
 

@@ -1,3 +1,4 @@
-.testClass {
-  background-color: orange;
+@font-face {
+  font-family: 'CormorantGaramond';
+  src: local('CormorantGaramond'), url(Fonts/CormorantGaramond-Light.woff) format('woff');
 }

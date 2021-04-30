@@ -1,4 +1,4 @@
 @font-face {
   font-family: 'CormorantGaramond';
-  src: local('CormorantGaramond'), url(Fonts/CormorantGaramond-Light.woff) format('woff');
+  src: local('CormorantGaramond'), url(fonts/CormorantGaramond-Light.woff) format('woff');
 }

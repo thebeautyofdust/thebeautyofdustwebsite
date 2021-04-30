@@ -69,6 +69,7 @@ module.exports = (env, argv) => {
           ],
         },
         {
+          include: path.resolve(__dirname, "./src"),
           test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
           use: [
             {

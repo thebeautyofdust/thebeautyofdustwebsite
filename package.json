@@ -7,10 +7,9 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "heroku-prebuild": "npm install --dev",
-    "build": "webpack --config webpack.config.js --mode=production",
-    "start": "node src/app.js",
     "dev": "webpack-dev-server --open --hot --config webpack.config.js --mode=development",
-    "serve": "webpack-dev-server --mode=production --config webpack.config.js"
+    "build": "webpack --config webpack.config.js --mode=production",
+    "serve": "webpack-dev-server --mode=production --config webpack.config.js "
   },
   "author": "",
   "license": "ISC",
@@ -46,7 +45,6 @@
     "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/preset-typescript": "^7.12.13",
     "babel-plugin-react-css-modules": "^5.2.6",
-    "file-loader": "^6.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",

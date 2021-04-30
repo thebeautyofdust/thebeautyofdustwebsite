@@ -10,7 +10,7 @@
     "dev": "webpack-dev-server --open --hot --config webpack.config.js --mode=development",
     "build": "webpack --config webpack.config.js --mode=production",
     "serve": "webpack-dev-server --mode=production --config webpack.config.js ",
-    "start": "node index.js"
+    "start": "node main.bundle.js"
   },
   "author": "",
   "license": "ISC",

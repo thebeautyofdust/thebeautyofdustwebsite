@@ -18,9 +18,25 @@ module.exports = {
                     }
                 ]
             },
-            { 
-              test: /\.(png|woff|woff2|eot|}ttf|svg)$/, 
-              use: [{ loader: "url-loader", options: { limit: 100000 } }]
+            {
+              test: /\.(|css)$/,
+              use: [
+                {
+                    loader: "css-loader"
+                }
+              ]
+            },
+            {
+              test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+              use: [
+                {
+                  loader: 'file-loader',
+                  options: {
+                    name: '[name].[ext]',
+                    outputPath: 'fonts/'
+                  }
+                }
+              ]
             },
             {
               test: /\.(png|jpe?g|gif)$/i,

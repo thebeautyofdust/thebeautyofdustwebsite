@@ -17,6 +17,18 @@ module.exports = {
                         loader: "html-loader"
                     }
                 ]
+            },
+            { 
+              test: /\.(png|woff|woff2|eot|}ttf|svg)$/, 
+              use: [{ loader: "url-loader", options: { limit: 100000 } }]
+            },
+            {
+              test: /\.(png|jpe?g|gif)$/i,
+              use: [
+                {
+                  loader: 'file-loader',
+                },
+              ],
             }
         ]
     },

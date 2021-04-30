@@ -34,7 +34,6 @@ function Main() {
       <Header/>
       <BodyContainer>
           <TopContainer>
-            test
               <TempImage />
           </TopContainer>
       </BodyContainer>

@@ -33,7 +33,7 @@ const HeaderLogo = styled('div')`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 1;
+    flex: 4;
 `
 
 const Logo = styled('h1')`

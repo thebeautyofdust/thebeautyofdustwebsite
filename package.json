@@ -6,9 +6,11 @@
   "scripts": {
     "test": "jest",
     "test-watch": "jest --watch",
-    "start": "webpack-dev-server --open --hot --config webpack.config.js --mode=development",
+    "heroku-prebuild": "npm install --dev",
     "build": "webpack --config webpack.config.js --mode=production",
-    "serve": "webpack-dev-server --mode=production --config webpack.config.js "
+    "start": "node src/app.js",
+    "dev": "webpack-dev-server --open --hot --config webpack.config.js --mode=development",
+    "serve": "webpack-dev-server --mode=production --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",

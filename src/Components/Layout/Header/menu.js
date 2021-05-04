@@ -5,7 +5,6 @@ import styled from 'styled-components';
 export const StyledMenu = styled.nav`
 
 font-family: CormorantGaramond;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   background: ${({ theme }) => theme.bluewhite};
@@ -17,6 +16,8 @@ font-family: CormorantGaramond;
   position: absolute;
   left: 0;
   transition: transform 0.3s ease-in-out;
+
+  display: ${({ open }) => open ? 'flex' : 'none'};
   opacity: ${({ open }) => open ? 0.9 : 0};
   
   @media (max-width: ${({ theme }) => theme.mobile}) {
@@ -47,11 +48,11 @@ font-family: CormorantGaramond;
 const Menu = ({ open }) => {
   return (
     <StyledMenu open={open}>
-      <a href="/">
+      <a href="/#/about">
         About us
       </a>
-      <a href="/">
-        Contact
+      <a href="/#/pieces">
+        Pieces
         </a>
     </StyledMenu>
   )

@@ -19,14 +19,6 @@ module.exports = {
                 ]
             },
             {
-              test: /\.(|css)$/,
-              use: [
-                {
-                    loader: "css-loader"
-                }
-              ]
-            },
-            {
               test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
               use: [
                 {
@@ -35,6 +27,14 @@ module.exports = {
                     name: '[name].[ext]',
                     outputPath: 'fonts/'
                   }
+                }
+              ]
+            },
+            {
+              test: /\.(|css)$/,
+              use: [
+                {
+                    loader: "css-loader"
                 }
               ]
             },

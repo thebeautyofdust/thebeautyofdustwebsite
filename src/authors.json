@@ -2,6 +2,13 @@
     {
         "id": "nc",
         "name": "Naomi Compton",
-        "paragraph": []
+        "paragraph": [],
+        "imageSrc": "https://sheisfiercehq.com/wp-content/uploads/2015/01/Kelly-Cartoon-Headshot.jpg"
+    },
+    {
+        "id": "nc",
+        "name": "Justin Blass",
+        "paragraph": [],
+        "imageSrc": "http://krock.com/wp-content/uploads/2017/01/rainzilla-plain-cartoon-headshot.jpg"
     }
 ]

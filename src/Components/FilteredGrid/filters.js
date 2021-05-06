@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 const Wrapper = styled('div')`
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
+    width: 200px;
+    position: relative;
 `;
 
 const Header = styled('div')`
@@ -22,6 +24,10 @@ const ListTitle = styled('div')`
 const List = styled('div')`
     flex-direction: column;
     display: ${props => props.open ? 'flex' : 'none'};
+    position: absolute;
+    top: 35px;
+    width: 200px;
+    background: white;
 `;
 
 const ListItem = styled('div')`

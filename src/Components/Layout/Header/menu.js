@@ -48,12 +48,18 @@ font-family: CormorantGaramond;
 const Menu = ({ open }) => {
   return (
     <StyledMenu open={open}>
-      <a href="/#/about">
-        About us
-      </a>
       <a href="/#/pieces">
         Pieces
         </a>
+      <a href="/#/authors">
+        Authors
+        </a>
+      <a href="/#/about">
+        About us
+      </a>
+      <a href="/#/contact">
+        Contact
+      </a>
     </StyledMenu>
   )
 }

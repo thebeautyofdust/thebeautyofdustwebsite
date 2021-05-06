@@ -4,7 +4,7 @@ import { GlobalStyles } from '../../Common/global';
 import { theme } from '../../Common/theme';
 import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
-import PiecesGrid from '../FilteredGrid/pieces';
+import AuthorsGrid from '../FilteredGrid/authors';
 
 const BodyContainer = styled('div')`
   padding-top: 50px;
@@ -12,16 +12,16 @@ const BodyContainer = styled('div')`
   height: 100%;
 `
 
-function Pieces() {
+function Authors() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Header/>
       <BodyContainer>
-          <PiecesGrid />
+          <AuthorsGrid />
       </BodyContainer>
       <Footer />
   </ThemeProvider>
   );
 }
-export default Pieces;
+export default Authors;

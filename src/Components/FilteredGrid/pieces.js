@@ -5,7 +5,8 @@ import Grid from './grid';
 import pieces from '../../pieces.json';
 
 const Wrapper = styled('div')`
-    display: flex;
+    display: flex;    
+    flex-direction: column;
 `;
 
 const filterItems = [
@@ -35,14 +36,14 @@ class Pieces extends React.Component {
             imageSrc: item.imageSrc
         }));
     }
+
     render() {  
         const { items } = this.state;
 
         return (
             <Wrapper>
                 <Filters items={filterItems}/>
-               
-                {items && items.length && <Grid items={this.formatForGrid(items)}/>}
+                {items && items.length && <Grid items={this.formatForGrid(items)} routePath="/piece/"/>}
             </Wrapper>  
         );
     }

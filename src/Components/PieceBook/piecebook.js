@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import shesaid from '../../images/she-said.jpg'
-import path from '../../images/path.jpg'
+import shesaid from '../../images/she-said.jpg';
+import path from '../../images/path.jpg';
 
 
 import { getFirstPiece, getNextPiece, getPrevPiece, getImageByKey } from './helpers';
@@ -18,7 +18,7 @@ const ImageContainer = styled('div')`
 
 const Image = styled('img')`
   width: 100%;
-  height: 100%;
+  height: calc(100% - 20px);
   object-fit: cover;
 `
 

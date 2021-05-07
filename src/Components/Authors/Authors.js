@@ -9,7 +9,6 @@ import AuthorsGrid from '../FilteredGrid/authors';
 const BodyContainer = styled('div')`
   padding-top: 50px;
   width: 100vw;
-  height: 100%;
 `
 
 function Authors() {

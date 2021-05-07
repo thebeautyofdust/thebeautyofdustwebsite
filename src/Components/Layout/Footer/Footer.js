@@ -9,11 +9,14 @@ const Wrapper = styled('div')`
     align-items: center
 `
 
+const Text = styled('p')`
+    font-family: 'Cormorant Garamond', serif;
+`
 function Footer() {
   return (
     <Wrapper >
     <>
-      &copy; the beauty of dust 2021
+      <Text>&copy; the beauty of dust 2021</Text>
     </>
   </Wrapper>
   );

@@ -1,8 +1,11 @@
 import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Burger from './burger';
 import Menu from './menu';
 import { useOnClickOutside } from '../../../Common/hooks';
+import '../../../index.css';
+
 
 const StyledHeader = styled('header')`
     box-shadow: 0 0 4px rgb(0 0 0 / 10%);
@@ -39,14 +42,15 @@ const HeaderLogo = styled('div')`
 const Logo = styled('h1')`
     margin: 0;
     padding: 0;
-    font-family: CormorantGaramond;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 20px;
+    font-weight: normal;
 `
 
 const LogoTagline = styled('p')`
     margin: 0;
     padding: 0;
-    font-family: CormorantGaramond;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 10px;
 `
 
@@ -56,6 +60,13 @@ const HeaderRight = styled('div')`
     align-items: center;
     flex: 1;
 `
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+`;
 
 function Header() {
     const [open, setOpen] = useState(false);
@@ -71,10 +82,12 @@ function Header() {
                 <Menu open={open} setOpen={setOpen} />
                 </div>
             </HeaderLeft>
-            <HeaderLogo>
-                <Logo>the beauty of dust</Logo>
-                <LogoTagline>everyday imagination</LogoTagline>
-            </HeaderLogo>
+            <StyledLink to="/">
+                <HeaderLogo>
+                    <Logo>the beauty of dust</Logo>
+                    <LogoTagline>everyday imagination</LogoTagline>
+                </HeaderLogo>
+            </StyledLink>
             <HeaderRight></HeaderRight>
         </Wrapper>
       </StyledHeader>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { devices } from '../../Common/devices';
 
@@ -30,22 +31,26 @@ const TileImage = styled('img')`
 `;
 
 const TileTitle = styled('p')`
+    font-family: 'Cormorant Garamond', serif;
+`;
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: black;
 `;
 
 
-class Grid extends React.Component {
-    onClick(id) {
-        this.props.handleClick(id);
-    }
 
+class Grid extends React.Component {
+   
     renderTile({id, title, imageSrc}) {
         return (
-            <a href={`/#${this.props.routePath}${id}`}>
+            <StyledLink to={`${this.props.routePath}${id}`}>
                 <TileWrapper>
                     <TileImage src={imageSrc}></TileImage>
                     <TileTitle>{title}</TileTitle>
                 </TileWrapper>
-            </a>
+            </StyledLink>
         );
     }
 

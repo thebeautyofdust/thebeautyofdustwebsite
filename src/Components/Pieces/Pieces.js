@@ -9,7 +9,6 @@ import PiecesGrid from '../FilteredGrid/pieces';
 const BodyContainer = styled('div')`
   padding-top: 50px;
   width: 100vw;
-  height: 100%;
 `
 
 function Pieces() {

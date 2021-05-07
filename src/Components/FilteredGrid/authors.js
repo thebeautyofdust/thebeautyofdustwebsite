@@ -42,7 +42,7 @@ class Authors extends React.Component {
         return (
             <Wrapper>
                 <Filters items={filterItems}/>
-                {items && items.length && <Grid items={this.formatForGrid(items)}/>}
+                {items && items.length && <Grid items={this.formatForGrid(items)} routePath="/author/"/>}
             </Wrapper>  
         );
     }

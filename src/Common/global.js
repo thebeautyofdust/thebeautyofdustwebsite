@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   html, body {
@@ -9,11 +9,13 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    align-items: center;
+    min-height: 100vh;
+    padding-top: 50px;
     background: #FAFAFA;
-    display: flex;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    justify-content: center;
     text-rendering: optimizeLegibility;
   }
   `
+
+export const ContentWrapper = styled('div')`
+  min-height: calc(100vh - 50px - 100px);
+`;  

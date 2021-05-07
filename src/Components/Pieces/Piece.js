@@ -8,7 +8,27 @@ import { GetPieceById } from './helpers';
 
 const Wrapper = styled('div')`
   display: flex;
+  flex-direction: column;
+  align-items: center;
 `
+const TopText = styled('div')`
+    margin: 10px 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const Title = styled('h3')`
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 5px;
+    font-size: 50px;
+`;
+const By = styled('p')`
+    font-family: 'Cormorant Garamond', serif;
+`;
+
+const VideoContent = styled('iframe')`
+`;
 
 class Piece extends React.Component {
   constructor(props) {
@@ -21,16 +41,26 @@ class Piece extends React.Component {
   }
 
   render() {
-    const {title, author} = this.state.piece;
+    const {title, author, youtubeUrl} = this.state.piece;
 
     return (
         <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Header/>
         <Wrapper>
-            Name: {title}
-            <br />s
-            Author: {author}
+            <TopText>
+                <Title>{title}</Title>
+                <By>{author}</By>
+            </TopText>
+            <VideoContent 
+                width="560"
+                height="315"
+                src={youtubeUrl} 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+            />
         </Wrapper>
         <Footer />
     </ThemeProvider>

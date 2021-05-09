@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Main from "./Components/Main/Main";
 import Pieces from "./Components/Pieces/Pieces";
 import Piece from "./Components/Pieces/Piece";
@@ -18,6 +18,9 @@ function Routes() {
       <Route exact path="/author/:id" component={Author} />
       <Route exact path="/about" component={About} />
       <Route exact path="/contact" component={Contact} />
+      <Route exact path="/shesaid">
+        <Redirect to="/piece/shesaid" />
+      </Route>
     </>
   );
 };

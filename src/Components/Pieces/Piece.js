@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
+import { Link } from 'react-router-dom';
 import { GlobalStyles } from '../../Common/global';
 import { theme } from '../../Common/theme';
 import Header from '../Layout/Header/Header';
@@ -30,6 +31,25 @@ const By = styled('p')`
 const VideoContent = styled('iframe')`
 `;
 
+const GoToArtist = styled('button')`
+  background: transparent;
+  border: 1px solid black;
+  padding: 10px 20px;
+  cursor: pointer;
+`;
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+`;
+
+
+const HiddenImage = styled('img')`
+   display: none;
+`;
+
 class Piece extends React.Component {
   constructor(props) {
     super(props);
@@ -40,14 +60,17 @@ class Piece extends React.Component {
     }
   }
 
+  onViewMoreClick
+
   render() {
-    const {title, author, youtubeUrl} = this.state.piece;
+    const {title, author, youtubeUrl, authorId, firstName, imageSrc} = this.state.piece;
 
     return (
         <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Header/>
         <Wrapper>
+            <HiddenImage src={imageSrc}/>
             <TopText>
                 <Title>{title}</Title>
                 <By>{author}</By>
@@ -61,6 +84,9 @@ class Piece extends React.Component {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen
             />
+            <StyledLink to={`/author/${authorId}`}>
+              <GoToArtist>learn more about {firstName}</GoToArtist>
+            </StyledLink>
         </Wrapper>
         <Footer />
     </ThemeProvider>

@@ -77,9 +77,9 @@ function Header() {
       <StyledHeader>
         <Wrapper>
             <HeaderLeft>
-                <div ref={node}>
-                <Burger open={open} setOpen={setOpen} />
-                <Menu open={open} setOpen={setOpen} />
+                <div >
+                    <Burger open={open} setOpen={setOpen} />
+                    <Menu open={open} setOpen={setOpen}/>
                 </div>
             </HeaderLeft>
             <StyledLink to="/">

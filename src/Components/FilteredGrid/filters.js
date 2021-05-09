@@ -76,6 +76,8 @@ class Filters extends React.Component {
         console.log('items', items)
         return (
             <Wrapper  
+                onBlur={() => this.setOpen(true)}
+                onClick={() => this.setOpen(true)}
                 onMouseEnter={() => this.setOpen(true)}
                 onMouseLeave={() => this.setOpen(false)}>
                 <Header>

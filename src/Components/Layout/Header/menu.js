@@ -7,6 +7,7 @@ export const StyledMenu = styled.nav`
 font-family: CormorantGaramond;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   background: ${({ theme }) => theme.bluewhite};
   top: 50px;
   height: calc(100vh - 50px);
@@ -33,6 +34,7 @@ font-family: CormorantGaramond;
     color: ${({ theme }) => theme.primaryDark};
     text-decoration: none;
     transition: color 0.3s linear;
+    width: 270px;
     
     @media (max-width: ${({ theme }) => theme.mobile}) {
       font-size: 1.5rem;
@@ -45,9 +47,15 @@ font-family: CormorantGaramond;
   }
 `;
 
-const Menu = ({ open }) => {
+const Menu = ({ open, setOpen}) => {
   return (
-    <StyledMenu open={open}>
+    <StyledMenu open={open} onClick={
+      (event) => {
+        if(event.target === event.currentTarget) {
+          setOpen(false)
+        }
+      }}
+    >
       <a href="/#/pieces">
         Pieces
         </a>

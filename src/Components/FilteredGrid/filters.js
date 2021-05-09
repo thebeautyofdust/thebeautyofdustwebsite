@@ -56,7 +56,7 @@ class Filters extends React.Component {
     }
     
     handleClick = (id) => {
-        console.log(id);
+        this.props.setFilter(id)
     }
 
     toggleList = () => {
@@ -73,7 +73,6 @@ class Filters extends React.Component {
 
     render() {  
         const { items } = this.props;
-        console.log('items', items)
         return (
             <Wrapper  
                 onBlur={() => this.setOpen(true)}

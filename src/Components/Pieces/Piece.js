@@ -45,11 +45,6 @@ const StyledLink = styled(Link)`
     justify-content: center;
 `;
 
-
-const HiddenImage = styled('img')`
-   display: none;
-`;
-
 class Piece extends React.Component {
   constructor(props) {
     super(props);
@@ -63,19 +58,23 @@ class Piece extends React.Component {
   onViewMoreClick
 
   render() {
-    const {title, author, youtubeUrl, authorId, firstName, imageSrc} = this.state.piece;
+    const {title, author, youtubeUrl, authorId, firstName} = this.state.piece;
 
     return (
         <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Header/>
         <Wrapper>
-            <HiddenImage src={imageSrc}/>
             <TopText>
                 <Title>{title}</Title>
                 <By>{author}</By>
             </TopText>
             <VideoContent 
+                allowfullscreen="allowfullscreen"
+                mozallowfullscreen="mozallowfullscreen" 
+                msallowfullscreen="msallowfullscreen" 
+                oallowfullscreen="oallowfullscreen" 
+                webkitallowfullscreen="webkitallowfullscreen"
                 width="560"
                 height="315"
                 src={youtubeUrl} 

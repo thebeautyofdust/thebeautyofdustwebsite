@@ -9,7 +9,7 @@ import Footer from '../Layout/Footer/Footer';
 function Contact() {
   return (
     <ThemeProvider theme={theme}>
-      <Header />
+      <Header activePage="contact"/>
         <GlobalStyles />
         Contact
       <Footer />

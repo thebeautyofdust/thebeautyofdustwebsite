@@ -8,7 +8,7 @@ import sheSaid from '../../images/she-said.jpg';
 import PieceBook from '../PieceBook/piecebook';
 
 const BodyContainer = styled('div')`
-  padding-top: 50px;
+  padding-top: 20px;
   width: 100vw;
   height: 100%;
 `

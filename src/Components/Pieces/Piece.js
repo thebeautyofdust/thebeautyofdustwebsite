@@ -36,6 +36,7 @@ const GoToArtist = styled('button')`
   border: 1px solid black;
   padding: 10px 20px;
   cursor: pointer;
+  font-family: 'Cormorant', serif;
 `;
 
 const StyledLink = styled(Link)`
@@ -43,6 +44,10 @@ const StyledLink = styled(Link)`
     color: black;
     display: flex;
     justify-content: center;
+`;
+
+const PieceText = styled('p')`
+  font-family: 'Cormorant', serif;
 `;
 
 class Piece extends React.Component {
@@ -63,18 +68,13 @@ class Piece extends React.Component {
     return (
         <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <Header/>
+        <Header />
         <Wrapper>
             <TopText>
                 <Title>{title}</Title>
                 <By>{author}</By>
             </TopText>
             <VideoContent 
-                allowfullscreen="allowfullscreen"
-                mozallowfullscreen="mozallowfullscreen" 
-                msallowfullscreen="msallowfullscreen" 
-                oallowfullscreen="oallowfullscreen" 
-                webkitallowfullscreen="webkitallowfullscreen"
                 width="560"
                 height="315"
                 src={youtubeUrl} 
@@ -83,6 +83,13 @@ class Piece extends React.Component {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen
             />
+            <PieceText>
+              She said<br/>
+              they said<br/>
+              and then she wept<br/>
+              her muted tears<br/>
+              her civil refrain<br/>
+            </PieceText>
             <StyledLink to={`/author/${authorId}`}>
               <GoToArtist>learn more about {firstName}</GoToArtist>
             </StyledLink>

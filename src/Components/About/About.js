@@ -11,7 +11,7 @@ import Footer from '../Layout/Footer/Footer';
 function About() {
   return (
     <ThemeProvider theme={theme}>
-      <Header />
+      <Header activePage="about" />
         <GlobalStyles />
         <ContentWrapper>
           About page

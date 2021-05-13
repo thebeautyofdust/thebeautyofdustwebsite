@@ -15,7 +15,7 @@ function Pieces() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Header/>
+      <Header activePage="pieces"/>
       <BodyContainer>
           <PiecesGrid />
       </BodyContainer>

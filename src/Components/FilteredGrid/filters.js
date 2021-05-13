@@ -56,7 +56,7 @@ class Filters extends React.Component {
     }
     
     handleClick = (id) => {
-        this.props.setFilter(id)
+        this.props.setFilter(id);
     }
 
     toggleList = () => {
@@ -75,14 +75,14 @@ class Filters extends React.Component {
         const { items } = this.props;
         return (
             <Wrapper  
-                onBlur={() => this.setOpen(true)}
-                onClick={() => this.setOpen(true)}
-                onMouseEnter={() => this.setOpen(true)}
                 onMouseLeave={() => this.setOpen(false)}>
-                <Header>
+                <Header 
+                    onBlur={() => this.setOpen(true)}
+                    onClick={() => this.setOpen(true)}
+                    onMouseEnter={() => this.setOpen(true)}>
                     <ListTitle><ListItemText>Filter By</ListItemText></ListTitle>
                 </Header>
-                <List open={this.state.open}>
+                <List open={this.state.open} onClick={() => this.setOpen(false)}>
                     {items.map(item => this.renderItem(item))}
                 </List>
             </Wrapper>

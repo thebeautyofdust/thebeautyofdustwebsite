@@ -15,7 +15,7 @@ function Authors() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Header/>
+      <Header activePage="authors"/>
       <BodyContainer>
           <AuthorsGrid />
       </BodyContainer>

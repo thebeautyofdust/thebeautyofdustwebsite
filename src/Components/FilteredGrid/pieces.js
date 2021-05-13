@@ -10,8 +10,16 @@ const Wrapper = styled('div')`
     flex-direction: column;
 `;
 
+const FiltersWrapper = styled('div')`
+    padding: 20px;
+    display: flex;    
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+`;
+
 const SeeAll = styled('div')`
-    
+    cursor: pointer;
 `;
 
 const filterItems = [
@@ -48,18 +56,17 @@ class Pieces extends React.Component {
     }
 
     setFilter = (filter) => {
-        const { filterBy, items } = this.state;
+        const items = pieces;
         var filteredItems  = [];
         items.forEach(item => {
-            if (filterBy.length) {
-                if( item.categories.includes(filterBy)) {
+            if (!!filter) {
+                if(item.categories.includes(filter)) {
                     filteredItems.push(item);
                 }
             } else {    
                 filteredItems.push(item)
             }
         });
-
         this.setState({filterBy: filter, items: filteredItems})
     }
 
@@ -68,8 +75,10 @@ class Pieces extends React.Component {
 
         return (
             <Wrapper>
-                <Filters items={filterItems} setFilter={this.setFilter}/>
-                <SeeAll onClick={() => this.setFilter("")}>See All</SeeAll>
+                <FiltersWrapper>
+                    <Filters items={filterItems} setFilter={this.setFilter}/>
+                    <SeeAll onClick={() => this.setFilter("")}>See All</SeeAll>
+                </FiltersWrapper>
                 {items && items.length && <Grid items={this.formatForGrid(items)} routePath="/piece/"/>}
             </Wrapper>  
         );

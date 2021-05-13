@@ -6,7 +6,6 @@ import Menu from './menu';
 import { useOnClickOutside } from '../../../Common/hooks';
 import '../../../index.css';
 
-
 const StyledHeader = styled('header')`
     box-shadow: 0 0 4px rgb(0 0 0 / 10%);
     padding: 0;
@@ -68,10 +67,11 @@ const StyledLink = styled(Link)`
     justify-content: center;
 `;
 
-function Header() {
+function Header(props) {
     const [open, setOpen] = useState(false);
     const node = useRef();
     useOnClickOutside(node, () => setOpen(false));
+    const { activePage } = props;
 
   return (
       <StyledHeader>
@@ -79,7 +79,7 @@ function Header() {
             <HeaderLeft>
                 <div >
                     <Burger open={open} setOpen={setOpen} />
-                    <Menu open={open} setOpen={setOpen}/>
+                    <Menu activePage={activePage} open={open} setOpen={setOpen}/>
                 </div>
             </HeaderLeft>
             <StyledLink to="/">

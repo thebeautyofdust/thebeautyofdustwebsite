@@ -3,8 +3,7 @@ import { bool } from 'prop-types';
 import styled from 'styled-components';
 
 export const StyledMenu = styled.nav`
-
-font-family: CormorantGaramond;
+  font-family: CormorantGaramond;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -30,6 +29,7 @@ font-family: CormorantGaramond;
     text-transform: uppercase;
     padding: 2rem 0;
     font-weight: bold;
+    font-family: 'Cormorant Garamond', serif;
     letter-spacing: 0.5rem;
     color: ${({ theme }) => theme.primaryDark};
     text-decoration: none;
@@ -45,9 +45,17 @@ font-family: CormorantGaramond;
       color: ${({ theme }) => theme.primaryHover};
     }
   }
+  .active {
+    text-decoration: line-through;
+    pointer-events: none;
+    &:hover {
+      color: ${({ theme }) => theme.primaryDark};
+    }
+  }
 `;
 
-const Menu = ({ open, setOpen}) => {
+const Menu = ({ open, setOpen, activePage}) => {
+  console.log("active", activePage);
   return (
     <StyledMenu open={open} onClick={
       (event) => {
@@ -56,16 +64,16 @@ const Menu = ({ open, setOpen}) => {
         }
       }}
     >
-      <a href="/#/pieces">
+      <a className={activePage === "pieces" ? "active" : ''} href="/#/pieces">
         Pieces
         </a>
-      <a href="/#/authors">
+      <a className={activePage === "authors" ? "active" : ''} href="/#/authors">
         Authors
         </a>
-      <a href="/#/about">
+      <a className={activePage === "about" ? "active" : ''} href="/#/about">
         About us
       </a>
-      <a href="/#/contact">
+      <a className={activePage === "contact" ? "active" : ''} href="/#/contact">
         Contact
       </a>
     </StyledMenu>

@@ -9,6 +9,18 @@ const Wrapper = styled('div')`
     flex-direction: column;
 `;
 
+const FiltersWrapper = styled('div')`
+    padding: 20px;
+    display: flex;    
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+`;
+
+const SeeAll = styled('div')`
+    cursor: pointer;
+`;
+
 const filterItems = [
     {
         title: 'Spoken Work',
@@ -27,8 +39,10 @@ class Authors extends React.Component {
 
         this.state = {
             items: authors,
+            filterBy: "",
         }
     }
+
     formatForGrid(items) {
         return items.map(item => ({
             id: item.id,
@@ -36,12 +50,31 @@ class Authors extends React.Component {
             imageSrc: item.imageSrc
         }));
     }
+
+    setFilter = (filter) => {
+        const items = pieces;
+        var filteredItems  = [];
+        items.forEach(item => {
+            if (!!filter) {
+                if(item.categories.includes(filter)) {
+                    filteredItems.push(item);
+                }
+            } else {    
+                filteredItems.push(item)
+            }
+        });
+        this.setState({filterBy: filter, items: filteredItems})
+    }
+
     render() {  
         const { items } = this.state;
 
         return (
             <Wrapper>
-                <Filters items={filterItems}/>
+                <FiltersWrapper>
+                    <Filters items={filterItems} setFilter={this.setFilter}/>
+                    <SeeAll onClick={() => this.setFilter("")}>See All</SeeAll>
+                </FiltersWrapper>
                 {items && items.length && <Grid items={this.formatForGrid(items)} routePath="/author/"/>}
             </Wrapper>  
         );

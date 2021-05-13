@@ -28,7 +28,7 @@ const BackButton = styled('button')`
   position: absolute;
   top: calc(50vh);
   left: 40px;
-  font-size: 30px;
+  font-size: 25px;
   border: none;
   background: transparent;
   color: white;
@@ -39,7 +39,7 @@ const NextButton = styled('button')`
   position: absolute;
   top: calc(50vh);
   right: 40px; 
-  font-size: 30px;
+  font-size: 25px;
   border: none;
   background: transparent;
   color: white;
@@ -101,8 +101,8 @@ class PieceBook extends React.Component {
     return (
       <BodyContainer>
       <ImageContainer>
-        {/* {this.getImage(index)} */}
-        <Image src={imgPath} />
+        {this.getImage(index)}
+        {/* <Image src={imgPath} /> */}
         <BackButton onClick={() => this.handleNextClick(index)}>
           <FontAwesomeIcon icon={faLongArrowAltLeft} />
         </BackButton>

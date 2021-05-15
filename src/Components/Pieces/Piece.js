@@ -6,11 +6,17 @@ import { theme } from '../../Common/theme';
 import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
 import { GetPieceById } from './helpers';
+import sheSaid from '../../images/she-said-480.mov';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLongArrowAltDown} from '@fortawesome/free-solid-svg-icons'
+
+import VideoPlayer from './videoPlayer';
 
 const Wrapper = styled('div')`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 `
 const TopText = styled('div')`
     margin: 10px 0; 
@@ -50,39 +56,136 @@ const PieceText = styled('p')`
   font-family: 'Cormorant', serif;
 `;
 
+const Section = styled('section')`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: calc(100vh - 50px);
+
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+    -moz-transition: opacity 1.5s ease-in-out;
+    -webkit-transition: opacity 1.5s ease-in-out;
+  }
+`;
+
+const VideoContainer  = styled('video')`
+    width: 100vw;
+    height: calc(100vh - 50px);
+    background: black;
+    z-index:5;
+`;
+
+const HelpMessage = styled('div')`
+
+  font-family: 'Cormorant Garamond', serif;
+  padding: 10vh 0;
+  font-style: italic;
+  font-size: 12px;
+`;
+
+const DownArrow = styled('button')`
+  background: none;
+  border: none;
+  position: absolute;
+  right: 4vw;
+  bottom: 4vh;
+  font-size: 30px;  
+  cursor: pointer;
+  z-index:10;
+  
+  &.white {
+    color: white;
+  }
+`;
+
 class Piece extends React.Component {
   constructor(props) {
     super(props);
 
     const id = props.match.params.id
     this.state = {
-     piece: GetPieceById(id)
+     piece: GetPieceById(id),
+     activeSection: 0
+    }
+    
+    this.videoRef = React.createRef();
+  }
+
+  _handleArrowKey = (event) => {
+    console.log(event);
+    const { activeSection } = this.state;
+    
+    if(event.keyCode == 40 && activeSection < 3)  { 
+      event.preventDefault();
+      this.moveDownSection(activeSection)
+    } 
+    else if (event.keyCode == 38 && activeSection > 0) { 
+      event.preventDefault();
+      this.setState({ activeSection: activeSection - 1 })
+    } 
+  }
+
+  moveDownSection = (activeSection) => { 
+    this.setState({ activeSection: activeSection + 1 })
+  }
+
+  componentWillMount = () => {
+    document.addEventListener("keydown", this._handleArrowKey, false);
+  }
+
+  componentWillUnmount = () => {
+    document.removeEventListener("keydown", this._handleArrowKey, false);
+  }
+
+  componentDidUpdate = () => {
+    const { activeSection } = this.state;
+    if (activeSection == 1) {
+      this.videoRef.current.play();
     }
   }
 
-  onViewMoreClick
+  downClick = () => {
+    const { activeSection } = this.state;
+    if( activeSection < 3)  { 
+      this.moveDownSection(activeSection)
+    } 
+  }
 
   render() {
     const {title, author, youtubeUrl, authorId, firstName} = this.state.piece;
+    const { activeSection } = this.state;
 
     return (
         <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Header />
         <Wrapper>
+          <DownArrow className={activeSection === 1 && 'white'} onClick={this.downClick}><FontAwesomeIcon icon={faLongArrowAltDown} /></DownArrow>
+          <Section className={activeSection == 0 ? 'active' : ''}>
             <TopText>
                 <Title>{title}</Title>
                 <By>{author}</By>
+                <HelpMessage>
+                  Press the down key or tap the down arrow to move through the piece
+                </HelpMessage>
             </TopText>
-            <VideoContent 
-                width="560"
-                height="315"
-                src={youtubeUrl} 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen
-            />
+          </Section>
+          <Section className={activeSection == 1 ? 'active' : ''}>
+             <VideoContainer ref={this.videoRef} controls>
+               <source src={sheSaid} type="video/mp4"/>
+                Your browser does not support the video tag.
+            </VideoContainer>
+          </Section>
+          <Section className={activeSection == 2 ? 'active' : ''}>
             <PieceText>
               She said<br/>
               they said<br/>
@@ -90,9 +193,12 @@ class Piece extends React.Component {
               her muted tears<br/>
               her civil refrain<br/>
             </PieceText>
+          </Section >
+          <Section className={activeSection == 3 ? 'active' : ''}>
             <StyledLink to={`/author/${authorId}`}>
               <GoToArtist>learn more about {firstName}</GoToArtist>
             </StyledLink>
+          </Section>
         </Wrapper>
         <Footer />
     </ThemeProvider>

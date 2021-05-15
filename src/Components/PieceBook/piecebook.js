@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import shesaid from '../../images/she-said.jpg';
 import path from '../../images/path.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -18,10 +17,33 @@ const ImageContainer = styled('div')`
   height: 100%;
 `
 
+const fadeIn = keyframes`
+from {
+  opacity:0;
+  bottom: 5vh;
+}
+to { 
+  opacity: 1;
+  bottom: 10vh;
+}
+`
+
 const Image = styled('img')`
-  width: 100%;
-  height: calc(100% - 20px);
+  position: absolute;
+  width: calc(100vw - 40px);
+  height: calc(100% - 70px);
   object-fit: cover;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+    -moz-transition: opacity 1.5s ease-in-out;
+    -webkit-transition: opacity 1.5s ease-in-out;
+  }
 `
 
 const BackButton = styled('button')`
@@ -52,6 +74,7 @@ const TitleContainer = styled('div')`
   text-align: center;
   left: 0;
   right: 0;
+  animation: ${fadeIn} 1.5s 1;
 `
 const Title = styled('h1')`
   font-family: 'Cormorant Garamond', serif;
@@ -88,10 +111,10 @@ class PieceBook extends React.Component {
 
   getImage = (index) => {
     if (index == 0) {
-      return <Image src={shesaid} />
+      return <Image className={index === 0 ? "active" : ""} src={shesaid} />
     }
     else {
-      return <Image src={path} /> 
+      return <Image className={index === 1 ? "active" : ""}  src={path} /> 
     }
   }
 
@@ -101,15 +124,18 @@ class PieceBook extends React.Component {
     return (
       <BodyContainer>
       <ImageContainer>
-        {this.getImage(index)}
+        {/* {this.getImage(index)} */}
         {/* <Image src={imgPath} /> */}
+        <Image className={index === 0 ? "active" : ""} src={shesaid} />
+        <Image className={index === 1 ? "active" : ""}  src={path} /> 
+
         <BackButton onClick={() => this.handleNextClick(index)}>
           <FontAwesomeIcon icon={faLongArrowAltLeft} />
         </BackButton>
         <NextButton onClick={() => this.handlePrevClick(index)}>
           <FontAwesomeIcon icon={faLongArrowAltRight} />
         </NextButton>
-        <TitleContainer>
+        <TitleContainer key={id}>
           <Title>{title}</Title>
           <Link to={`piece/${id}`}>
             <PieceButton>go to piece</PieceButton>

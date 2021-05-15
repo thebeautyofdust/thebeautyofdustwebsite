@@ -9,21 +9,21 @@ import PieceBook from '../PieceBook/piecebook';
 
 const BodyContainer = styled('div')`
   padding-top: 20px;
-  width: 100vw;
-  height: 100%;
 `
 
-const TopContainer = styled.div`
+const TopContainer = styled('div')`
   margin: 0 20px;
+  height: 100%;
 `;
 
-const TempImage = styled.div`
-  background-image: url(${sheSaid});
-  background-size: cover;
-  width: calc(100vw - 40px);
-  height: calc(100% - 40px);
-  background-repeat: no-repeat;
-  background-position: center;
+const TextStripContainer = styled('div')`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-item: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  padding: 130px 0px;
 `;
 
 function Main() {
@@ -35,6 +35,9 @@ function Main() {
           <TopContainer>
               <PieceBook />
           </TopContainer>
+          <TextStripContainer>
+            We believe dust is beautiful!
+          </TextStripContainer>
       </BodyContainer>
       <Footer />
   </ThemeProvider>

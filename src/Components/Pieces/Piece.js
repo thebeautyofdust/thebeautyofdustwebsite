@@ -8,7 +8,7 @@ import Footer from '../Layout/Footer/Footer';
 import { GetPieceById } from './helpers';
 import sheSaid from '../../images/she-said-480.mov';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowAltDown} from '@fortawesome/free-solid-svg-icons'
+import { faLongArrowAltUp, faLongArrowAltDown} from '@fortawesome/free-solid-svg-icons'
 
 import VideoPlayer from './videoPlayer';
 
@@ -16,7 +16,6 @@ const Wrapper = styled('div')`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
 `
 const TopText = styled('div')`
     margin: 10px 0; 
@@ -75,6 +74,11 @@ const Section = styled('section')`
     -moz-transition: opacity 1.5s ease-in-out;
     -webkit-transition: opacity 1.5s ease-in-out;
   }
+
+  &:last-child {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const VideoContainer  = styled('video')`
@@ -85,11 +89,18 @@ const VideoContainer  = styled('video')`
 `;
 
 const HelpMessage = styled('div')`
-
   font-family: 'Cormorant Garamond', serif;
   padding: 10vh 0;
   font-style: italic;
   font-size: 12px;
+`;
+
+const LearnMoreContainer = styled('div')`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 `;
 
 const DownArrow = styled('button')`
@@ -98,7 +109,22 @@ const DownArrow = styled('button')`
   position: absolute;
   right: 4vw;
   bottom: 4vh;
-  font-size: 30px;  
+  font-size: 20px;  
+  cursor: pointer;
+  z-index:10;
+  
+  &.white {
+    color: white;
+  }
+`;
+
+const UpArrow = styled('button')`
+  background: none;
+  border: none;
+  position: absolute;
+  right: 4vw;
+  top: calc(4vh + 50px);
+  font-size: 20px;  
   cursor: pointer;
   z-index:10;
   
@@ -169,13 +195,14 @@ class Piece extends React.Component {
         <GlobalStyles />
         <Header />
         <Wrapper>
-          <DownArrow className={activeSection === 1 && 'white'} onClick={this.downClick}><FontAwesomeIcon icon={faLongArrowAltDown} /></DownArrow>
+          {activeSection > 0 && <UpArrow className={activeSection === 1 && 'white'} onClick={this.downClick}><FontAwesomeIcon icon={faLongArrowAltUp} /></UpArrow>}
+          {activeSection < 3 && <DownArrow className={activeSection === 1 && 'white'} onClick={this.downClick}><FontAwesomeIcon icon={faLongArrowAltDown} /></DownArrow>}
           <Section className={activeSection == 0 ? 'active' : ''}>
             <TopText>
                 <Title>{title}</Title>
                 <By>{author}</By>
                 <HelpMessage>
-                  Press the down key or tap the down arrow to move through the piece
+                  press the down key or tap the down arrow to move through the piece
                 </HelpMessage>
             </TopText>
           </Section>
@@ -195,12 +222,15 @@ class Piece extends React.Component {
             </PieceText>
           </Section >
           <Section className={activeSection == 3 ? 'active' : ''}>
-            <StyledLink to={`/author/${authorId}`}>
-              <GoToArtist>learn more about {firstName}</GoToArtist>
-            </StyledLink>
+            <LearnMoreContainer>
+              <StyledLink to={`/author/${authorId}`}>
+                <GoToArtist>learn more about {firstName}</GoToArtist>
+              </StyledLink>
+            </LearnMoreContainer>
+            <Footer />
           </Section>
         </Wrapper>
-        <Footer />
+        {/* <Footer /> */}
     </ThemeProvider>
     );
   }

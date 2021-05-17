@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components';
-import shesaid from '../../images/she-said.jpg';
-import path from '../../images/path.jpg';
+import shesaid from '../../images/she-said2.png';
+import path from '../../images/trees3.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltLeft, faLongArrowAltRight} from '@fortawesome/free-solid-svg-icons'
 import { getFirstPiece, getNextPiece, getPrevPiece, getImageByKey } from './helpers';
@@ -31,7 +31,7 @@ to {
 const Image = styled('img')`
   position: absolute;
   width: calc(100vw - 40px);
-  height: calc(100% - 70px);
+  height: calc(100% - 90px);
   object-fit: cover;
   opacity: 0;
   transition: opacity .5s ease-in-out;

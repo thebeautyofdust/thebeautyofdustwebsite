@@ -8,7 +8,9 @@ import Footer from '../Layout/Footer/Footer';
 import { GetPieceById } from './helpers';
 import sheSaid from '../../images/she-said-480.mov';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowAltUp, faLongArrowAltDown} from '@fortawesome/free-solid-svg-icons'
+import { faLongArrowAltUp, faLongArrowAltDown} from '@fortawesome/free-solid-svg-icons';
+
+// import justin from '../../images/'
 
 import VideoPlayer from './videoPlayer';
 
@@ -24,13 +26,36 @@ const TopText = styled('div')`
     align-items: center;
 `;
 
+const  ContentsText = styled('div')`
+  font-family: 'Cormorant Garamond', serif;
+  padding-bottom: 10px;
+`;
+
+const ContentsContainer = styled('div')`
+  display: flex;
+  z-index: 4;
+  padding-top: 15px;
+`;
+
+const ContentsItem = styled('div')`
+  display: flex;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  text-decoration: underline;
+  z-index: 5;
+  padding: 0 15px;    
+  font-size: 14px;
+`;
+
 const Title = styled('h3')`
     font-family: 'Cormorant Garamond', serif;
-    margin-bottom: 5px;
-    font-size: 50px;
+    margin: 5px 0;
+    font-size: 55px;
 `;
+
 const By = styled('p')`
     font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 10vh;
 `;
 
 const VideoContent = styled('iframe')`
@@ -62,6 +87,7 @@ const Section = styled('section')`
   align-items: center;
   width: 100vw;
   height: calc(100vh - 50px);
+  flex-direction: column;
 
   opacity: 0;
   transition: opacity .5s ease-in-out;
@@ -90,9 +116,10 @@ const VideoContainer  = styled('video')`
 
 const HelpMessage = styled('div')`
   font-family: 'Cormorant Garamond', serif;
-  padding: 10vh 0;
   font-style: italic;
   font-size: 12px;
+  padding: 0 10px;
+  text-align: center;
 `;
 
 const LearnMoreContainer = styled('div')`
@@ -156,12 +183,16 @@ class Piece extends React.Component {
     } 
     else if (event.keyCode == 38 && activeSection > 0) { 
       event.preventDefault();
-      this.setState({ activeSection: activeSection - 1 })
+      this.moveUpSection(activeSection)
     } 
   }
 
   moveDownSection = (activeSection) => { 
     this.setState({ activeSection: activeSection + 1 })
+  }
+
+  moveUpSection = (activeSection) => { 
+    this.setState({ activeSection: activeSection - 1 })
   }
 
   componentWillMount = () => {
@@ -177,6 +208,17 @@ class Piece extends React.Component {
     if (activeSection == 1) {
       this.videoRef.current.play();
     }
+  }
+
+  setActiveSection = (section) => {
+    this.setState({ activeSection: section })
+  }
+
+  upClick = () => {
+    const { activeSection } = this.state;
+    if( activeSection > 0)  { 
+      this.moveUpSection(activeSection)
+    } 
   }
 
   downClick = () => {
@@ -195,22 +237,37 @@ class Piece extends React.Component {
         <GlobalStyles />
         <Header />
         <Wrapper>
-          {activeSection > 0 && <UpArrow className={activeSection === 1 && 'white'} onClick={this.downClick}><FontAwesomeIcon icon={faLongArrowAltUp} /></UpArrow>}
+          {activeSection > 0 && <UpArrow className={activeSection === 1 && 'white'} onClick={this.upClick}><FontAwesomeIcon icon={faLongArrowAltUp} /></UpArrow>}
           {activeSection < 3 && <DownArrow className={activeSection === 1 && 'white'} onClick={this.downClick}><FontAwesomeIcon icon={faLongArrowAltDown} /></DownArrow>}
           <Section className={activeSection == 0 ? 'active' : ''}>
             <TopText>
                 <Title>{title}</Title>
                 <By>{author}</By>
                 <HelpMessage>
-                  press the down key or tap the down arrow to move through the piece
+                  press the down key or tap the down arrow to move through the piece, or select a section below
                 </HelpMessage>
             </TopText>
+            <ContentsContainer>
+              <ContentsItem onClick={() => this.setActiveSection(1)}>piece video</ContentsItem>
+              <ContentsItem onClick={() => this.setActiveSection(2)}>piece text</ContentsItem>
+              <ContentsItem onClick={() => this.setActiveSection(3)}>interview</ContentsItem>
+            </ContentsContainer>
           </Section>
           <Section className={activeSection == 1 ? 'active' : ''}>
              <VideoContainer ref={this.videoRef} controls>
                <source src={sheSaid} type="video/mp4"/>
                 Your browser does not support the video tag.
             </VideoContainer>
+
+            {/* <iframe 
+              width="560"
+              height="315" 
+              src="https://www.youtube.com/embed/hICPmWyoMM0" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe> */}
           </Section>
           <Section className={activeSection == 2 ? 'active' : ''}>
             <PieceText>

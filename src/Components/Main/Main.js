@@ -4,8 +4,16 @@ import { GlobalStyles } from '../../Common/global';
 import { theme } from '../../Common/theme';
 import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
-import sheSaid from '../../images/she-said.jpg';
+import logo from '../../images/logo_triangle.png';
 import PieceBook from '../PieceBook/piecebook';
+
+
+const LogoImage = styled('img')`
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 10px;
+`;
 
 const BodyContainer = styled('div')`
   padding-top: 20px;
@@ -24,6 +32,16 @@ const TextStripContainer = styled('div')`
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px;
   padding: 130px 0px;
+  align-items: center;
+`;
+
+const LogoTitle = styled('div')`
+  display: flex;
+  flex-direction: column;
+`;
+
+const LogoSubText = styled('div')`
+  font-size: 10px;
 `;
 
 function Main() {
@@ -36,7 +54,11 @@ function Main() {
               <PieceBook />
           </TopContainer>
           <TextStripContainer>
-            We believe dust is beautiful!
+            <LogoImage src={logo} />
+            <LogoTitle>
+              the beauty of dust
+              <LogoSubText>everyday imaginiation</LogoSubText>
+            </LogoTitle>
           </TextStripContainer>
       </BodyContainer>
       <Footer />

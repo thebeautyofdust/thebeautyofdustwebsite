@@ -6,9 +6,9 @@ import Menu from './menu';
 import { useOnClickOutside } from '../../../Common/hooks';
 import '../../../index.css';
 
-import logo1 from '../../../images/logo1.png';
-import logo2 from '../../../images/logo2.png';
-import logo3 from '../../../images/logo3.png';
+import logo from '../../../images/logo.png';
+import logo2 from '../../../images/logo_triangle.png';
+import logo_big from '../../../images/logo_big.png';
 import logo4 from '../../../images/logo4.png'
 
 const StyledHeader = styled('header')`
@@ -73,8 +73,8 @@ const StyledLink = styled(Link)`
 `;
 
 const TestLogo = styled('img')`
-    width: 40px;
-    height: 100px;
+    width: 180px;
+    height: auto;
     object-fit: contain;
     margin-right: 10px;
 `;
@@ -96,13 +96,23 @@ function Header(props) {
             </HeaderLeft>
             <StyledLink to="/">
                 <HeaderLogo>
-                    <Logo>the beauty of dust</Logo>
-                    <LogoTagline>everyday imagination</LogoTagline>
-                    {/* <TestLogo src={logo4} /> */}
+
+                {/* <TestLogo src={logo_big} /> */}
+                    {/* <Logo>the beauty of dust</Logo>
+                    <LogoTagline>everyday imagination</LogoTagline> */}
                 </HeaderLogo>
             </StyledLink>
             <HeaderRight>
+                        {/* <HeaderLogo>
+
+                <Logo>the beauty of dust</Logo>
+                <LogoTagline>everyday imagination</LogoTagline>
+            </HeaderLogo> */}
                 {/* <TestLogo src={logo3} /> */}
+                    {/* <TestLogo src={logo} /> */}
+
+                <TestLogo src={logo} />
+                    
             </HeaderRight>
         </Wrapper>
       </StyledHeader>

@@ -15,6 +15,8 @@ const Wrapper = styled(ContentWrapper)`
 
 const AboutText = styled('div')`
   font-family: 'Cormorant Garamond', serif;
+  padding: 0px 20px;
+  text-align: center;
 `;
 
 function About() {

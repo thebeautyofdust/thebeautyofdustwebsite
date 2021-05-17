@@ -10,7 +10,7 @@ import sheSaid from '../../images/she-said-480.mov';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltUp, faLongArrowAltDown} from '@fortawesome/free-solid-svg-icons';
 
-// import justin from '../../images/'
+import justin from '../../images/justin.jpg';
 
 import VideoPlayer from './videoPlayer';
 
@@ -127,6 +127,7 @@ const LearnMoreContainer = styled('div')`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 `;
 
@@ -159,6 +160,27 @@ const UpArrow = styled('button')`
     color: white;
   }
 `;
+
+const InterviewContainer = styled('div')`
+  font-family: 'Cormorant Garamond', serif;
+  text-align: center;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+  font-size: 20px;
+
+`;
+
+const TempInterviewImage = styled('img')`
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 10px;    
+    width: 50vw;
+    padding-top: 15px;
+`;
+
 
 class Piece extends React.Component {
   constructor(props) {
@@ -280,6 +302,11 @@ class Piece extends React.Component {
           </Section >
           <Section className={activeSection == 3 ? 'active' : ''}>
             <LearnMoreContainer>
+              <InterviewContainer>
+                watch the interview with justin about the piece
+                <TempInterviewImage src={justin} />
+              </InterviewContainer>
+
               <StyledLink to={`/author/${authorId}`}>
                 <GoToArtist>learn more about {firstName}</GoToArtist>
               </StyledLink>

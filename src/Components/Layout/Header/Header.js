@@ -9,7 +9,7 @@ import '../../../index.css';
 import logo from '../../../images/logo.png';
 import logo2 from '../../../images/logo_triangle.png';
 import logo_big from '../../../images/logo_big.png';
-import logo4 from '../../../images/logo4.png'
+import Little_Logo from '../../../images/Little_Logo.png'
 
 const StyledHeader = styled('header')`
     box-shadow: 0 0 4px rgb(0 0 0 / 10%);
@@ -47,8 +47,9 @@ const Logo = styled('h1')`
     margin: 0;
     padding: 0;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: normal;
+    padding: 0px 6px;
 `
 
 const LogoTagline = styled('p')`
@@ -73,7 +74,7 @@ const StyledLink = styled(Link)`
 `;
 
 const TestLogo = styled('img')`
-    width: 180px;
+    width: 45px;
     height: auto;
     object-fit: contain;
     margin-right: 10px;
@@ -110,8 +111,11 @@ function Header(props) {
             </HeaderLogo> */}
                 {/* <TestLogo src={logo3} /> */}
                     {/* <TestLogo src={logo} /> */}
-
-                <TestLogo src={logo} />
+{/* <TestLogo src={logo_big} /> */}
+                    {/* 
+                    <LogoTagline>everyday imagination</LogoTagline> */}
+                <Logo>the beauty of dust</Logo>
+                <TestLogo src={Little_Logo} />
                     
             </HeaderRight>
         </Wrapper>

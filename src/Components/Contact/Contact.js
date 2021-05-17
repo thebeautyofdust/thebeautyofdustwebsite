@@ -14,6 +14,8 @@ const Wrapper = styled(ContentWrapper)`
 
 const ContactText = styled('div')`
   font-family: 'Cormorant Garamond', serif;
+  text-align: center;
+  padding: 20px;
 `;
 
 function Contact() {

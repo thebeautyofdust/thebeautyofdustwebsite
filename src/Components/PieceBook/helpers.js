@@ -1,4 +1,3 @@
-import shesaid from '../../images/she-said.jpg';
 
 const pieces = [
     {

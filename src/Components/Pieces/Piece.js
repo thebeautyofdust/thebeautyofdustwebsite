@@ -11,9 +11,10 @@ import { faLongArrowAltUp, faLongArrowAltDown} from '@fortawesome/free-solid-svg
 
 import sheSaid from '../../images/she-said-480.mov';
 import freewrite from '../../images/free-write-480.mov';
-import walkInTheWoodsInterview from '../../images/walk-in-the-woods-interview-480.mov';
-import shesaidInterview from '../../images/naomi-interview-480p.mov';
 import walkInTheWoods from '../../images/walk-in-the-woods-480p.mov';
+
+import SheSaidText from './piecetext/shesaid';
+import FreeWriteText from './piecetext/freewrite';
 
 const Wrapper = styled('div')`
   display: flex;
@@ -52,14 +53,12 @@ const Title = styled('h3')`
     font-family: 'Cormorant Garamond', serif;
     margin: 5px 0;
     font-size: 55px;
+    text-align: center;
 `;
 
 const By = styled('p')`
     font-family: 'Cormorant Garamond', serif;
     margin-bottom: 10vh;
-`;
-
-const VideoContent = styled('iframe')`
 `;
 
 const GoToArtist = styled('button')`
@@ -89,7 +88,7 @@ const Section = styled('section')`
   width: 100vw;
   height: calc(100vh - 50px);
   flex-direction: column;
-
+  display:none;
   opacity: 0;
   transition: opacity .5s ease-in-out;
   -moz-transition: opacity .5s ease-in-out;
@@ -97,13 +96,13 @@ const Section = styled('section')`
 
   &.active {
     opacity: 1;
+    display:flex;
     transition: opacity 1.5s ease-in-out;
     -moz-transition: opacity 1.5s ease-in-out;
     -webkit-transition: opacity 1.5s ease-in-out;
   }
 
   &:last-child {
-    display: flex;
     flex-direction: column;
   }
 `;
@@ -135,7 +134,7 @@ const LearnMoreContainer = styled('div')`
 const DownArrow = styled('button')`
   background: none;
   border: none;
-  position: absolute;
+  position: fixed;
   right: 4vw;
   bottom: 4vh;
   font-size: 20px;  
@@ -150,7 +149,7 @@ const DownArrow = styled('button')`
 const UpArrow = styled('button')`
   background: none;
   border: none;
-  position: absolute;
+  position: fixed;
   right: 4vw;
   top: calc(4vh + 50px);
   font-size: 20px;  
@@ -179,14 +178,10 @@ const InterviewVideoContainer  = styled('video')`
     margin: 2em 0;
 `;
 
-
-const TempInterviewImage = styled('img')`
-    width: 180px;
-    height: auto;
-    object-fit: contain;
-    margin-right: 10px;    
-    width: 50vw;
-    padding-top: 15px;
+const IFrame = styled('iframe')`
+  width: 100% !important;
+  height: auto !important;
+  margin: 2em 0;
 `;
 
 
@@ -270,22 +265,17 @@ class Piece extends React.Component {
     }
   }
 
-  getInterview = (id) => {
-    if(id === 'shesaid') {
-      return <source src={shesaidInterview} type="video/mp4"/>
+  getPieceText = (id) => {
+    if (id === 'shesaid') {
+      return <SheSaidText />
     }
-    else if (id === 'trees') {
-      return <source src={walkInTheWoodsInterview} type="video/mp4"/>
-    } 
     else if (id === 'freewrite') {
-      return <source src={freewrite} type="video/mp4"/>
-    }
+      return <FreeWriteText />
+    } 
   }
 
-  
-
   render() {
-    const {id, title, author, youtubeUrl, authorId, firstName} = this.state.piece;
+    const {id, title, author, interviewUrl, authorId, firstName} = this.state.piece;
     const { activeSection } = this.state;
 
     return (
@@ -315,7 +305,7 @@ class Piece extends React.Component {
                 Your browser does not support the video tag.
             </VideoContainer>
 
-            {/* <iframe 
+            {/* <IFrame 
               width="560"
               height="315" 
               src="https://www.youtube.com/embed/hICPmWyoMM0" 
@@ -323,25 +313,26 @@ class Piece extends React.Component {
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowfullscreen>
-            </iframe> */}
+            </IFrame> */}
           </Section>
           <Section className={activeSection == 2 ? 'active' : ''}>
             <PieceText>
-              She said<br/>
-              they said<br/>
-              and then she wept<br/>
-              her muted tears<br/>
-              her civil refrain<br/>
+             {this.getPieceText(id)}
             </PieceText>
           </Section >
           <Section className={activeSection == 3 ? 'active' : ''}>
             <LearnMoreContainer>
               <InterviewContainer>
                 {`watch the interview with ${firstName} about the piece`}
-                <InterviewVideoContainer controls>
-                  {this.getInterview(id)}
-                  Your browser does not support the video tag.
-                </InterviewVideoContainer>
+                <IFrame 
+                  width="560"
+                  height="315" 
+                  src={interviewUrl} 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </IFrame>
               </InterviewContainer>
 
               <StyledLink to={`/author/${authorId}`}>

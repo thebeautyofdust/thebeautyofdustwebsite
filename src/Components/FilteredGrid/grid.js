@@ -24,7 +24,7 @@ const TileImage = styled('img')`
         height: 27vw;
     }
     @media ${devices.tablet} { 
-        width: 48vw;   
+        width: 47vw;   
         height: 37vw;
     }
 `;

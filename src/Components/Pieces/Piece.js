@@ -9,10 +9,6 @@ import { GetPieceById } from './helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltUp, faLongArrowAltDown} from '@fortawesome/free-solid-svg-icons';
 
-import sheSaid from '../../images/she-said-480.mov';
-import freewrite from '../../images/free-write-480.mov';
-import walkInTheWoods from '../../images/walk-in-the-woods-480p.mov';
-
 import SheSaidText from './piecetext/shesaid';
 import FreeWriteText from './piecetext/freewrite';
 
@@ -107,12 +103,14 @@ const Section = styled('section')`
   }
 `;
 
-const VideoContainer  = styled('video')`
+const VideoContainer  = styled('div')`
     width: 100vw;
     height: calc(100vh - 50px);
     background: black;
     z-index:5;
 `;
+
+
 
 const HelpMessage = styled('div')`
   font-family: 'Cormorant Garamond', serif;
@@ -179,9 +177,13 @@ const InterviewVideoContainer  = styled('video')`
 `;
 
 const IFrame = styled('iframe')`
-  width: 100% !important;
-  height: auto !important;
+  max-width: 100% !important;
   margin: 2em 0;
+`;
+
+const IFramePiece = styled('iframe')`
+  width: 100% !important;
+  height: 100% !important;
 `;
 
 
@@ -231,7 +233,7 @@ class Piece extends React.Component {
   componentDidUpdate = () => {
     const { activeSection } = this.state;
     if (activeSection == 1) {
-      this.videoRef.current.play();
+      // this.videoRef.current.play();
     }
   }
 
@@ -253,18 +255,6 @@ class Piece extends React.Component {
     } 
   }
 
-  getVideo = (id) => {
-    if(id === 'shesaid') {
-      return <source src={sheSaid} type="video/mp4"/>
-    }
-    else if (id === 'freewrite') {
-      return <source src={freewrite} type="video/mp4"/>
-    } 
-    else if (id === 'trees') {
-      return <source src={walkInTheWoods} type="video/mp4"/>
-    }
-  }
-
   getPieceText = (id) => {
     if (id === 'shesaid') {
       return <SheSaidText />
@@ -275,7 +265,7 @@ class Piece extends React.Component {
   }
 
   render() {
-    const {id, title, author, interviewUrl, authorId, firstName} = this.state.piece;
+    const {id, title, author, interviewUrl, authorId, firstName, youtubeUrl} = this.state.piece;
     const { activeSection } = this.state;
 
     return (
@@ -300,20 +290,21 @@ class Piece extends React.Component {
             </ContentsContainer>
           </Section>
           <Section className={activeSection == 1 ? 'active' : ''}>
-             <VideoContainer ref={this.videoRef} controls>
+             {/* <VideoContainer ref={this.videoRef} controls>
                {this.getVideo(id)}
                 Your browser does not support the video tag.
-            </VideoContainer>
-
-            {/* <IFrame 
+            </VideoContainer> */}
+            <VideoContainer>
+            <IFramePiece 
               width="560"
               height="315" 
-              src="https://www.youtube.com/embed/hICPmWyoMM0" 
+              src={youtubeUrl}
               title="YouTube video player" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-            </IFrame> */}
+              allowfullscreen="allowfullscreen">
+            </IFramePiece>
+            </VideoContainer>
           </Section>
           <Section className={activeSection == 2 ? 'active' : ''}>
             <PieceText>

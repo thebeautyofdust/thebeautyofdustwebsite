@@ -6,13 +6,14 @@ import { theme } from '../../Common/theme';
 import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
 import { GetPieceById } from './helpers';
-import sheSaid from '../../images/she-said-480.mov';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltUp, faLongArrowAltDown} from '@fortawesome/free-solid-svg-icons';
 
-import justin from '../../images/justin.jpg';
-
-import VideoPlayer from './videoPlayer';
+import sheSaid from '../../images/she-said-480.mov';
+import freewrite from '../../images/free-write-480.mov';
+import walkInTheWoodsInterview from '../../images/walk-in-the-woods-interview-480.mov';
+import shesaidInterview from '../../images/naomi-interview-480p.mov';
+import walkInTheWoods from '../../images/walk-in-the-woods-480p.mov';
 
 const Wrapper = styled('div')`
   display: flex;
@@ -169,8 +170,15 @@ const InterviewContainer = styled('div')`
   flex-direction: column;
   align-items: center;    
   font-size: 20px;
-
 `;
+
+const InterviewVideoContainer  = styled('video')`
+    min-width: 50vw;
+    height: auto;
+    z-index: 5;    
+    margin: 2em 0;
+`;
+
 
 const TempInterviewImage = styled('img')`
     width: 180px;
@@ -250,8 +258,34 @@ class Piece extends React.Component {
     } 
   }
 
+  getVideo = (id) => {
+    if(id === 'shesaid') {
+      return <source src={sheSaid} type="video/mp4"/>
+    }
+    else if (id === 'freewrite') {
+      return <source src={freewrite} type="video/mp4"/>
+    } 
+    else if (id === 'trees') {
+      return <source src={walkInTheWoods} type="video/mp4"/>
+    }
+  }
+
+  getInterview = (id) => {
+    if(id === 'shesaid') {
+      return <source src={shesaidInterview} type="video/mp4"/>
+    }
+    else if (id === 'trees') {
+      return <source src={walkInTheWoodsInterview} type="video/mp4"/>
+    } 
+    else if (id === 'freewrite') {
+      return <source src={freewrite} type="video/mp4"/>
+    }
+  }
+
+  
+
   render() {
-    const {title, author, youtubeUrl, authorId, firstName} = this.state.piece;
+    const {id, title, author, youtubeUrl, authorId, firstName} = this.state.piece;
     const { activeSection } = this.state;
 
     return (
@@ -277,7 +311,7 @@ class Piece extends React.Component {
           </Section>
           <Section className={activeSection == 1 ? 'active' : ''}>
              <VideoContainer ref={this.videoRef} controls>
-               <source src={sheSaid} type="video/mp4"/>
+               {this.getVideo(id)}
                 Your browser does not support the video tag.
             </VideoContainer>
 
@@ -303,8 +337,11 @@ class Piece extends React.Component {
           <Section className={activeSection == 3 ? 'active' : ''}>
             <LearnMoreContainer>
               <InterviewContainer>
-                watch the interview with justin about the piece
-                <TempInterviewImage src={justin} />
+                {`watch the interview with ${firstName} about the piece`}
+                <InterviewVideoContainer controls>
+                  {this.getInterview(id)}
+                  Your browser does not support the video tag.
+                </InterviewVideoContainer>
               </InterviewContainer>
 
               <StyledLink to={`/author/${authorId}`}>

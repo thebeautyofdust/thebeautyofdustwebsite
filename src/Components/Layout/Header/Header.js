@@ -5,10 +5,7 @@ import Burger from './burger';
 import Menu from './menu';
 import { useOnClickOutside } from '../../../Common/hooks';
 import '../../../index.css';
-
-import logo from '../../../images/logo.png';
-import logo2 from '../../../images/logo_triangle.png';
-import logo_big from '../../../images/logo_big.png';
+import { devices } from '../../../Common/devices';
 import Little_Logo from '../../../images/Little_Logo.png'
 
 const StyledHeader = styled('header')`
@@ -36,27 +33,23 @@ const HeaderLeft = styled('div')`
 `
 
 const HeaderLogo = styled('div')`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 4;
+    flex: 0;
 `
 
 const Logo = styled('h1')`
     margin: 0;
     padding: 0;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: normal;
-    padding: 0px 6px;
-`
+    padding: 2px 6px;
 
-const LogoTagline = styled('p')`
-    margin: 0;
-    padding: 0;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 10px;
+    @media ${devices.mobileL} { 
+        font-size: 16px; 
+    }
+    @media ${devices.tablet} { 
+        font-size: 18px; 
+    }
 `
 
 const HeaderRight = styled('div')`
@@ -71,6 +64,8 @@ const StyledLink = styled(Link)`
     color: black;
     display: flex;
     justify-content: center;
+    pointer: cursor;
+    align-items: center;
 `;
 
 const TestLogo = styled('img')`
@@ -95,28 +90,13 @@ function Header(props) {
                     <Menu activePage={activePage} open={open} setOpen={setOpen}/>
                 </div>
             </HeaderLeft>
-            <StyledLink to="/">
-                <HeaderLogo>
-
-                {/* <TestLogo src={logo_big} /> */}
-                    {/* <Logo>the beauty of dust</Logo>
-                    <LogoTagline>everyday imagination</LogoTagline> */}
-                </HeaderLogo>
-            </StyledLink>
+            <HeaderLogo>
+            </HeaderLogo>
             <HeaderRight>
-                        {/* <HeaderLogo>
-
-                <Logo>the beauty of dust</Logo>
-                <LogoTagline>everyday imagination</LogoTagline>
-            </HeaderLogo> */}
-                {/* <TestLogo src={logo3} /> */}
-                    {/* <TestLogo src={logo} /> */}
-{/* <TestLogo src={logo_big} /> */}
-                    {/* 
-                    <LogoTagline>everyday imagination</LogoTagline> */}
-                <Logo>the beauty of dust</Logo>
-                <TestLogo src={Little_Logo} />
-                    
+                <StyledLink to="/">
+                    <Logo>the beauty of dust</Logo>
+                    <TestLogo src={Little_Logo} />
+                </StyledLink>
             </HeaderRight>
         </Wrapper>
       </StyledHeader>

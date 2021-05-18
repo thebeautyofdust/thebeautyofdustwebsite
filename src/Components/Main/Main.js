@@ -6,13 +6,20 @@ import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
 import logo from '../../images/logo_triangle.png';
 import PieceBook from '../PieceBook/piecebook';
-
+import { devices } from '../../Common/devices';
 
 const LogoImage = styled('img')`
     width: 180px;
     height: auto;
     object-fit: contain;
     margin-right: 10px;
+
+    @media ${devices.mobileL} { 
+        width: 220px;
+    }
+    @media ${devices.tablet} { 
+      width: 280px;
+    }
 `;
 
 const BodyContainer = styled('div')`
@@ -38,10 +45,23 @@ const TextStripContainer = styled('div')`
 const LogoTitle = styled('div')`
   display: flex;
   flex-direction: column;
+
+  @media ${devices.mobileL} { 
+    font-size: 30px; 
+  }
+  @media ${devices.tablet} { 
+      font-size: 45px; 
+  }
 `;
 
 const LogoSubText = styled('div')`
   font-size: 10px;
+  @media ${devices.mobileL} { 
+    font-size: 15px; 
+  }
+  @media ${devices.tablet} { 
+      font-size: 20px; 
+  }
 `;
 
 function Main() {

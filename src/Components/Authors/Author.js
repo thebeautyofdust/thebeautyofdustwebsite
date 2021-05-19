@@ -8,7 +8,21 @@ import { GetAuthorById } from './helpers';
 
 const Wrapper = styled('div')`
   display: flex;
+  height: calc(100vh - 150px);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;  
+  font-family: 'Cormorant Garamond', serif;
+
 `
+
+const CommingSoon = styled('div')`
+  font-size: 30px;
+  padding-top: 10px;
+`
+
+
 
 class Author extends React.Component {
   constructor(props) {
@@ -28,7 +42,8 @@ class Author extends React.Component {
         <GlobalStyles />
         <Header/>
         <Wrapper>
-            Name: {name}
+            more about {name}
+            <CommingSoon>Comming Soon</CommingSoon>
         </Wrapper>
         <Footer />
     </ThemeProvider>

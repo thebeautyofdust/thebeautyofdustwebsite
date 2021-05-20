@@ -30,124 +30,190 @@ function Text() {
   return (
         <BodyContainer>
             <Section>
-            <p class="p1">I want to paper shred the times I wrote exposes</p>
-<p class="p1">on stolen stories of people close to me <span class="Apple-converted-space">&nbsp;</span></p>
-<p class="p1">I want to tape back together strips of my stories from</p>
-<p class="p1">when I laid myself on a cutting board to<span class="Apple-converted-space">&nbsp;</span></p>
-<p class="p1">get applause for pain and dysfunction instead</p>
-<p class="p1">of owning that I was loved exactly then,</p>
-<p class="p1">as I was,</p>
-<p class="p1">all snarled and rough</p>
-<p class="p1">and in love with too many<span class="Apple-converted-space">&nbsp;</span></p>
-<p class="p1">contradictory things</p>
-<p class="p1">like the sum of every person&rsquo;s opinion of me</p>
-<p class="p1">and the truth.</p>
-<p class="p1">I want to own a rock with my name on it</p>
-<p class="p1">and the word &ldquo;patience&rdquo;</p>
-<p class="p1">as a reminder of what it takes to maintain belief<span class="Apple-converted-space">&nbsp;</span></p>
+<p dir="ltr"><span>I want to paper shred&nbsp;</span></p>
+<p dir="ltr"><span>the times I wrote exposes</span></p>
+<p dir="ltr"><span>on stolen stories&nbsp;</span></p>
+<p dir="ltr"><span>of people close to me&nbsp;&nbsp;</span></p>
+<p dir="ltr"><span>I want to tape back together&nbsp;</span></p>
+<p dir="ltr"><span>strips of my stories from</span></p>
+<p dir="ltr"><span>when I laid myself out</span></p>
+<p dir="ltr"><span>on a cutting board to&nbsp;</span></p>
+<p dir="ltr"><span>get applause for&nbsp;</span></p>
+<p dir="ltr"><span>pain and dysfunction&nbsp;</span></p>
+<p dir="ltr"><span>instead of owning that&nbsp;</span></p>
+<p dir="ltr"><span>I was loved just then,</span></p>
+<p dir="ltr"><span>exactly as I was,</span></p>
+<p dir="ltr"><span>all gnarled and rough</span></p>
+<p dir="ltr"><span>and in love with too many&nbsp;</span></p>
 </Section>
 <Section>
-<p class="p1">in reconciliation</p>
-<p class="p1">I want to always remember God&rsquo;s work</p>
-<p class="p1">is thousands of years of reconciliation</p>
-<p class="p1">I don&rsquo;t want to be 86<span class="Apple-converted-space">&nbsp;</span></p>
-<p class="p1">and such a temple slave at the house of work</p>
-<p class="p1">that I can&rsquo;t read the effects of neglect</p>
-<p class="p1">in my family&rsquo;s eyes</p>
-<p class="p1">I want to be 86 and still believe</p>
-<p class="p1">I can correct my course</p>
-<p class="p1">I wanna grow until the brushfire</p>
-<p class="p1">decides we&lsquo;re gonna do a new thing</p>
-<p class="p1">and it&rsquo;s time to teach the ground</p>
-<p class="p1">what I know about the sky</p>
-<p class="p1">I want the verses of my life</p>
-<p class="p1">To be the place where you scream<span class="Apple-converted-space">&nbsp;</span></p>
-<p class="p1">&ldquo;Hallelujah!&rdquo;</p>
+<p dir="ltr"><span>contradictory things</span></p>
+<p dir="ltr"><span>like the sum of&nbsp;</span></p>
+<p dir="ltr"><span>every person&rsquo;s opinion of me</span></p>
+<p dir="ltr"><span>and the truth.</span></p>
+<p dir="ltr"><span>I want to own a rock&nbsp;</span></p>
+<p dir="ltr"><span>with my name on it</span></p>
+<p dir="ltr"><span>and the word &ldquo;patience&rdquo;</span></p>
+<p dir="ltr"><span>as a reminder of&nbsp;</span></p>
+<p dir="ltr"><span>what it takes to maintain&nbsp;</span></p>
+<p dir="ltr"><span>belief in reconciliation</span></p>
+<p dir="ltr"><span>I want to remember that</span></p>
+<p dir="ltr"><span>God&rsquo;s work is&nbsp;</span></p>
+<p dir="ltr"><span>thousands of years&nbsp;</span></p>
+<p dir="ltr"><span>of reconciliation</span></p>
+<p dir="ltr"><span>I don&rsquo;t want to be 86&nbsp;</span></p>
 </Section>
 <Section>
-<p class="p1">I wanna be a line that hits</p>
-<p class="p1">forever</p>
-<p class="p1">I wanna stop writing if it ever air pumps</p>
-<p class="p1">my ego</p>
-<p class="p1">I wanna write like I am fluent in the language</p>
-<p class="p1">between player and his trumpet</p>
-<p class="p1">I wanna write like Jupiter&rsquo;s atmosphere is so dense</p>
-<p class="p1">compressed hydrogen becomes a liquid sky and</p>
-<p class="p1">a metal surface</p>
-<p class="p1">making it the most magnetic planet in the solar system</p>
-<p class="p1">and I never want to be afraid of being Jupiter on</p>
-<p class="p1">days I feel I am made of something worth knowing</p>
-<p class="p1">and I never want to be too proud or jealous</p>
-<p class="p1">to love the Jupiter in someone else</p>
-<p class="p1">to be the faintest star still entirely worth knowing</p>
+<p dir="ltr"><span>and such a temple slave&nbsp;</span></p>
+<p dir="ltr"><span>at the house of work</span></p>
+<p dir="ltr"><span>that I can&rsquo;t read&nbsp;</span></p>
+<p dir="ltr"><span>the effects of neglect</span></p>
+<p dir="ltr"><span>in my family&rsquo;s eyes</span></p>
+<p dir="ltr"><span>I want to be 86 and still believe</span></p>
+<p dir="ltr"><span>I can correct my course</span></p>
+<p dir="ltr"><span>I wanna grow until the brushfire</span></p>
+<p dir="ltr"><span>decides we&lsquo;re gonna&nbsp;</span></p>
+<p dir="ltr"><span>do a new thing</span></p>
+<p dir="ltr"><span>and it&rsquo;s time&nbsp;</span></p>
+<p dir="ltr"><span>to teach the ground</span></p>
+<p dir="ltr"><span>what we learned&nbsp;</span></p>
+<p dir="ltr"><span>about the sky</span></p>
+<p dir="ltr"><span>I want the verses&nbsp;</span></p>
 </Section>
 <Section>
-<p class="p1">I wanna show up when I can</p>
-<p class="p1">and stop apologizing so much when I can&rsquo;t</p>
-<p class="p1">or when I do and I&rsquo;m weird</p>
-<p class="p1">Because it&rsquo;s exhausting trying to be something I&rsquo;m not for you</p>
-<p class="p1">And I need every ounce<span class="Apple-converted-space">&nbsp;</span></p>
-<p class="p1">of discipline and good juju</p>
-<p class="p1">to peel off these costumes</p>
-<p class="p1">and bend my selfish into the surrender</p>
-<p class="p1">that love requires<span class="Apple-converted-space">&nbsp;</span></p>
-<p class="p1">I wanna learn how to snake,</p>
-<p class="p1">how to shed this thick skin</p>
-<p class="p1">If there&rsquo;s any chance it&rsquo;ll keep you out</p>
-<p class="p1">of this house I try to sign over to God every morning</p>
-<p class="p1">but the day, man.</p>
-<p class="p1">The day really knows how to rattle you from a balance beam</p>
+<p dir="ltr"><span>of my life</span></p>
+<p dir="ltr"><span>to be the place&nbsp;</span></p>
+<p dir="ltr"><span>where you scream&nbsp;</span></p>
+<p dir="ltr"><span>&ldquo;hallelujah!&rdquo;</span></p>
+<p dir="ltr"><span>I wanna be a line&nbsp;</span></p>
+<p dir="ltr"><span>that hits forever</span></p>
+<p dir="ltr"><span>I wanna stop writing if&nbsp;</span></p>
+<p dir="ltr"><span>it ever air pumps my ego</span></p>
+<p dir="ltr"><span>I wanna write like I am&nbsp;</span></p>
+<p dir="ltr"><span>fluent in the language</span></p>
+<p dir="ltr"><span>between player&nbsp;</span></p>
+<p dir="ltr"><span>and his trumpet</span></p>
+<p dir="ltr"><span>I wanna write like&nbsp;</span></p>
+<p dir="ltr"><span>jupiter&rsquo;s atmosphere&nbsp;</span></p>
+<p dir="ltr"><span>is so dense</span></p>
 </Section>
 <Section>
-<p class="p1">So I&rsquo;m doing everything to</p>
-<p class="p1">try and strengthen my core</p>
-<p class="p1">Teach me, if you know.</p>
-<p class="p1">Try it without words</p>
-<p class="p1">(I know enough about how to manipulate those)</p>
-<p class="p1">Show me how you turn your spinal chord</p>
-<p class="p1">into a stem that grows</p>
-<p class="p1">Show me how a mouth becomes construction site</p>
-<p class="p1">where ya know what needs to come down</p>
-<p class="p1">and how to build others up</p>
-<p class="p1">Show me how to tetris my thoughts</p>
-<p class="p1">and open my lungs</p>
-<p class="p1">so I can run the steepest hill in the city</p>
-<p class="p1">cause I know this life promises</p>
-<p class="p1">there are steeper to come</p>
+<p dir="ltr"><span>compressed hydrogen&nbsp;</span></p>
+<p dir="ltr"><span>becomes a liquid sky&nbsp;</span></p>
+<p dir="ltr"><span>and a metal surface</span></p>
+<p dir="ltr"><span>making it the most&nbsp;</span></p>
+<p dir="ltr"><span>magnetic planet&nbsp;</span></p>
+<p dir="ltr"><span>in the solar system</span></p>
+<p dir="ltr"><span>and I never want to be&nbsp;</span></p>
+<p dir="ltr"><span>afraid of being jupiter&nbsp;</span></p>
+<p dir="ltr"><span>on days I feel I am made of&nbsp;</span></p>
+<p dir="ltr"><span>something worth knowing</span></p>
+<p dir="ltr"><span>and I never want to be&nbsp;</span></p>
+<p dir="ltr"><span>too proud or jealous</span></p>
+<p dir="ltr"><span>to love the jupiter&nbsp;</span></p>
+<p dir="ltr"><span>in someone else</span></p>
+<p dir="ltr"><span>to be the faintest star&nbsp;</span></p>
 </Section>
 <Section>
-<p class="p1">and I wasn&rsquo;t born to collapse</p>
-<p class="p1">but in case one of us does</p>
-<p class="p1">I wanna be ready to float you through my love</p>
-<p class="p1">or be okay with letting you pick me up</p>
-<p class="p1">Until now</p>
-<p class="p1">I have been too scared of rejection</p>
-<p class="p1">To shut down my venus fly trap for men</p>
-<p class="p1">But I know too many good men</p>
-<p class="p1">to be anything but good soil</p>
-<p class="p1">to be a place where I let nature run its course</p>
-<p class="p1">to be the mother of an orchard</p>
-<p class="p1">and know how to let people go</p>
-<p class="p1">how to be tilled by their root lift</p>
-<p class="p1">I&rsquo;ve got a friend</p>
-<p class="p1">that tills me every time he comes and goes</p>
+<p dir="ltr"><span>still entirely worth knowing</span></p>
+<p dir="ltr"><span>I wanna show up when I can</span></p>
+<p dir="ltr"><span>and stop apologizing so much&nbsp;</span></p>
+<p dir="ltr"><span>when I can&rsquo;t&nbsp;</span></p>
+<p dir="ltr"><span>or when I do and I&rsquo;m weird</span></p>
+<p dir="ltr"><span>because it&rsquo;s exhausting&nbsp;</span></p>
+<p dir="ltr"><span>trying to be something&nbsp;</span></p>
+<p dir="ltr"><span>I&rsquo;m not for you</span></p>
+<p dir="ltr"><span>and I need every ounce&nbsp;</span></p>
+<p dir="ltr"><span>of discipline and good juju</span></p>
+<p dir="ltr"><span>to peel off these costumes</span></p>
+<p dir="ltr"><span>and bend my selfish&nbsp;</span></p>
+<p dir="ltr"><span>into the surrender</span></p>
+<p dir="ltr"><span>that love requires&nbsp;</span></p>
+<p dir="ltr"><span>I wanna learn how to snake,</span></p>
 </Section>
 <Section>
-<p class="p1">He taught me where Jupiter is</p>
-<p class="p1">I&rsquo;ve got a friend</p>
-<p class="p1">She taught me I don&rsquo;t have to stash</p>
-<p class="p1">what I actually think</p>
-<p class="p1">and for the first time</p>
-<p class="p1">in a long time</p>
-<p class="p1">I think</p>
-<p class="p1">I&rsquo;m learning how to be a me</p>
-<p class="p1">That I like</p>
-<p class="p1">And I realized that</p>
-<p class="p1">it&rsquo;s beautiful when people come alongside you in your sadness</p>
-<p class="p1">but it&rsquo;s powerful,</p>
-<p class="p1">world-changing even,</p>
-<p class="p1">when they just wanna journey with you</p>
-<p class="p1">because you are finally free.</p>
+<p dir="ltr"><span>how to shed this thick skin</span></p>
+<p dir="ltr"><span>if there&rsquo;s any chance&nbsp;</span></p>
+<p dir="ltr"><span>it&rsquo;ll keep you out</span></p>
+<p dir="ltr"><span>of this house&nbsp;</span></p>
+<p dir="ltr"><span>I try to sign over to God&nbsp;</span></p>
+<p dir="ltr"><span>every morning</span></p>
+<p dir="ltr"><span>but the day, man</span></p>
+<p dir="ltr"><span>the day really knows&nbsp;</span></p>
+<p dir="ltr"><span>how to rattle you&nbsp;</span></p>
+<p dir="ltr"><span>from a balance beam</span></p>
+<p dir="ltr"><span>so I&rsquo;m doing everything to</span></p>
+<p dir="ltr"><span>try and strengthen my core</span></p>
+<p dir="ltr"><span>teach me what you know</span></p>
+<p dir="ltr"><span>try it without words</span></p>
+<p dir="ltr"><span>(I know enough about&nbsp;</span></p>
+</Section>
+<Section>
+<p dir="ltr"><span>how to manipulate those)</span></p>
+<p dir="ltr"><span>show me how you&nbsp;</span></p>
+<p dir="ltr"><span>turn your spinal cord</span></p>
+<p dir="ltr"><span>into a stem that grows</span></p>
+<p dir="ltr"><span>show me how a mouth&nbsp;</span></p>
+<p dir="ltr"><span>becomes construction site</span></p>
+<p dir="ltr"><span>where ya know&nbsp;</span></p>
+<p dir="ltr"><span>what needs to come down</span></p>
+<p dir="ltr"><span>and how to build others up</span></p>
+<p dir="ltr"><span>show me how to&nbsp;</span></p>
+<p dir="ltr"><span>tetris my thoughts</span></p>
+<p dir="ltr"><span>and open my lungs</span></p>
+<p dir="ltr"><span>so I can run the&nbsp;</span></p>
+<p dir="ltr"><span>steepest hill in the city</span></p>
+<p dir="ltr"><span>cause I know&nbsp;</span></p>
+</Section>
+<Section>
+<p dir="ltr"><span>this life promises</span></p>
+<p dir="ltr"><span>there are steeper to come</span></p>
+<p dir="ltr"><span>and I wasn&rsquo;t born to collapse</span></p>
+<p dir="ltr"><span>but in case one of us does</span></p>
+<p dir="ltr"><span>I wanna be ready&nbsp;</span></p>
+<p dir="ltr"><span>to float you through my love</span></p>
+<p dir="ltr"><span>or be okay with&nbsp;</span></p>
+<p dir="ltr"><span>letting you pick me up</span></p>
+<p dir="ltr"><span>until now</span></p>
+<p dir="ltr"><span>I have been too scared&nbsp;</span></p>
+<p dir="ltr"><span>of rejection</span></p>
+<p dir="ltr"><span>to shut down&nbsp;</span></p>
+<p dir="ltr"><span>my venus fly trap for men</span></p>
+<p dir="ltr"><span>but I know too many good men</span></p>
+<p dir="ltr"><span>to be anything but good soil</span></p>
+</Section>
+<Section>
+<p dir="ltr"><span>to be a place where&nbsp;</span></p>
+<p dir="ltr"><span>I let nature run its course</span></p>
+<p dir="ltr"><span>to be the mother of an orchard</span></p>
+<p dir="ltr"><span>and know how to let people go</span></p>
+<p dir="ltr"><span>how to be tilled by their root lift</span></p>
+<p dir="ltr"><span>I&rsquo;ve got a friend</span></p>
+<p dir="ltr"><span>that tills me every time&nbsp;</span></p>
+<p dir="ltr"><span>he comes and goes</span></p>
+<p dir="ltr"><span>he taught me where jupiter is</span></p>
+<p dir="ltr"><span>I&rsquo;ve got a friend</span></p>
+<p dir="ltr"><span>she taught me&nbsp;</span></p>
+<p dir="ltr"><span>I don&rsquo;t have to stash</span></p>
+<p dir="ltr"><span>what I actually think</span></p>
+<p dir="ltr"><span>and for the first time</span></p>
+<p dir="ltr"><span>in a long time</span></p>
+</Section>
+<Section>
+<p dir="ltr"><span>I think</span></p>
+<p dir="ltr"><span>I&rsquo;m learning how&nbsp;</span></p>
+<p dir="ltr"><span>to be a me</span></p>
+<p dir="ltr"><span>that I like</span></p>
+<p dir="ltr"><span>and I realized that</span></p>
+<p dir="ltr"><span>it&rsquo;s beautiful when&nbsp;</span></p>
+<p dir="ltr"><span>people come alongside you&nbsp;</span></p>
+<p dir="ltr"><span>in your sadness</span></p>
+<p dir="ltr"><span>but it&rsquo;s powerful,</span></p>
+<p dir="ltr"><span>world-changing even,</span></p>
+<p dir="ltr"><span>when they just wanna&nbsp;</span></p>
+<p dir="ltr"><span>journey with you</span></p>
+<p dir="ltr"><span>because you are&nbsp;</span></p>
+<p dir="ltr"><span>finally free.</span></p>
 </Section>
     </BodyContainer>
   );

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components';
 import shesaid from '../../images/she-said.jpg';
 import path from '../../images/trees.jpg';
+import lady from '../../images/lady.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltLeft, faLongArrowAltRight} from '@fortawesome/free-solid-svg-icons'
 import { getFirstPiece, getNextPiece, getPrevPiece, getImageByKey } from './helpers';
@@ -106,8 +107,11 @@ class PieceBook extends React.Component {
     if (index == 0) {
       return <Image className={index === 0 ? "active" : ""} src={shesaid} />
     }
+    else if (index == 1) {
+      return <Image className={index === 1 ? "active" : ""}  src={path} />
+    }
     else {
-      return <Image className={index === 1 ? "active" : ""}  src={path} /> 
+      return <Image className={index === 1 ? "active" : ""}  src={lady} />
     }
   }
 
@@ -121,6 +125,7 @@ class PieceBook extends React.Component {
         {/* <Image src={imgPath} /> */}
         <Image className={index === 0 ? "active" : ""} src={shesaid} />
         <Image className={index === 1 ? "active" : ""}  src={path} /> 
+        <Image className={index === 2 ? "active" : ""}  src={lady} />
 
         <BackButton className="left" color="white" onClick={() => this.handleNextClick(index)} />
         <NextButton color="white" onClick={() => this.handlePrevClick(index)} />

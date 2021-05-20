@@ -31,10 +31,10 @@ const Text = styled('p')`
 function Footer() {
   return (
     <Wrapper>
-      <Socials>
+      {/* <Socials>
         <StyledFontAwesomeIcon icon={faInstagram} />
         <StyledFontAwesomeIcon icon={faFacebookSquare} />
-      </Socials>
+      </Socials> */}
       <Text>&copy; the beauty of dust 2021</Text>
   </Wrapper>
   );

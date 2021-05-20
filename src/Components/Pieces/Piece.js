@@ -11,6 +11,8 @@ import { faLongArrowAltUp, faLongArrowAltDown} from '@fortawesome/free-solid-svg
 
 import SheSaidText from './piecetext/shesaid';
 import FreeWriteText from './piecetext/freewrite';
+import IntoTheWoodsText from './piecetext/intothewoods';
+import NeverAloneText from './piecetext/neveralone';
 
 const Wrapper = styled('div')`
   display: flex;
@@ -128,20 +130,6 @@ const LearnMoreContainer = styled('div')`
   flex-direction: column;
 }
 `;
-// const DownArrow = styled('button')`
-//   background: none;
-//   border: none;
-//   position: fixed;
-//   right: 4vw;
-//   bottom: 4vh;
-//   font-size: 20px;  
-//   cursor: pointer;
-//   z-index:10;
-  
-//   &.white {
-//     color: white;
-//   }
-// `;
 
 const DownArrow = styled(Arrow)`
   position: fixed;
@@ -158,21 +146,6 @@ const UpArrow = styled(Arrow)`
   z-index:10;
   cursor: pointer;
 `;
-
-// const UpArrow = styled('button')`
-//   background: none;
-//   border: none;
-//   position: fixed;
-//   right: 4vw;
-//   top: calc(4vh + 50px);
-//   font-size: 20px;  
-//   cursor: pointer;
-//   z-index:10;
-  
-//   &.white {
-//     color: white;
-//   }
-// `;
 
 const InterviewContainer = styled('div')`
   font-family: 'Cormorant Garamond', serif;
@@ -201,15 +174,29 @@ const IFramePiece = styled('iframe')`
   height: 100% !important;
 `;
 
+function parseQuery(queryString) {
+  var query = {};
+  var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+  for (var i = 0; i < pairs.length; i++) {
+      var pair = pairs[i].split('=');
+      query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+  }
+  return query;
+}
 
 class Piece extends React.Component {
   constructor(props) {
     super(props);
+    const queryString = parseQuery(props.location.search)
+    let activeSection = 0;
+    if (queryString && queryString.section) {
+      activeSection = queryString.section === 'interview' ? 3 : 0;
+    }
 
     const id = props.match.params.id
     this.state = {
      piece: GetPieceById(id),
-     activeSection: 0
+     activeSection: activeSection
     }
     
     this.videoRef = React.createRef();
@@ -277,6 +264,12 @@ class Piece extends React.Component {
     else if (id === 'freewrite') {
       return <FreeWriteText />
     } 
+    else if (id === 'trees') {
+      return <IntoTheWoodsText />
+    } 
+    else if (id === 'neveralone') {
+      return <NeverAloneText />
+    }
   }
 
   render() {
@@ -328,19 +321,20 @@ class Piece extends React.Component {
           </Section >
           <Section className={activeSection == 3 ? 'active' : ''}>
             <LearnMoreContainer>
-              <InterviewContainer>
-                {`watch the interview with ${firstName} about the piece`}
-                <IFrame 
-                  width="560"
-                  height="315" 
-                  src={interviewUrl} 
-                  title="YouTube video player" 
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen>
-                </IFrame>
-              </InterviewContainer>
-
+              {interviewUrl && 
+                <InterviewContainer>
+                  {`watch the interview with ${firstName} about the piece`}
+                  <IFrame 
+                    width="560"
+                    height="315" 
+                    src={interviewUrl} 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </IFrame>
+                </InterviewContainer>
+              }
               <StyledLink to={`/author/${authorId}`}>
                 <GoToArtist>learn more about {firstName}</GoToArtist>
               </StyledLink>

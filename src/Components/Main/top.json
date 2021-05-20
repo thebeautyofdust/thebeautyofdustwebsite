@@ -1,30 +1,31 @@
 [
     {
-        "id": "shesaid",
-        "title": "she said",
-        "shortText": "a spoken work piece",
-        "url": "piece/shesaid",
-        "imageSrc": "https://lh3.googleusercontent.com/poZL2yiHwTCvRyG-67mF7e1HE5xSRDKWm7xDrmxyWFtivv3jrukDEBSQG5AUeFafJhlxOJLOJvb-2Nu2XRxZPrQ_ab4GhAZlpnPtY9H-ZpHQPXdbDHYbT2JjzFEOIgmCozmV5dCn4w=w500"
+        "id": "trees",
+        "title": "interview with Justin Blass",
+        "shortText": "walk in the woods",
+        "url": "piece/trees?section=interview",
+        "imageSrc": "https://lh3.googleusercontent.com/rTCFbf7rMpkN0D8mKcAlkZ0obxqz9I3dJT4JWvRPUKYWb-rMFkcHgjcqBro_TKFobRYcoJS9WapIy9uudlq3gU5uJS9LjIjIi9qIcmmDonFojSEut6Pz_R70314a6jINz5g1i4wyiQ=w500"
     },
     {
-        "id": "trees",
-        "title": "Justin Blass",
-        "shortText": "about justin",
-        "url": "author/jb",
-        "imageSrc": "https://lh3.googleusercontent.com/cpZwlaor8Rw7Pkk1wblwyMD0dAIkOI4yRabSCyMcAfN688yVddywm-WffUTcoWeT3kkDc315TSjevxd37JKOmBIyEJe3xoyFIi6eXcMbdUNYvUIVNAS35RIx5RmWc4yvyjlOlHIrsA=w500"
+        "id": "neveralone",
+        "title": "never alone",
+        "shortText": "Strahan Coleman",
+        "url": "piece/neveralone",
+        "imageSrc": "https://lh3.googleusercontent.com/9nVsclXQH7hqCfoArk2HWjQbHHtJ7QKdJlIZ0jkKA5aI2TGCtkzmb5SNw6peWwW3zE5KusqXlq6UOw6s-9NTIWJJB1WciMBOHExCIutDpFZZUg7neAa7JlNvRROczhI1B5yg3NhU2g=w500"
     },
     {
-        "id": "trees",
-        "title": "Coming Soon",
+        "id": "freewrite",
+        "title": "interview with Danielle Simmons",
+        "shortText": "free write january 16th",
+        "url": "piece/freewrite?section=interview",
+        "imageSrc": "https://lh3.googleusercontent.com/iIoCs83buhr5rHwKPr-E9cJISBGpYkHT9SblHqwCcFfd9dPgo1-wvzmqNkkY0cPc4hnifpgYdKz89tS7v6CgLppyO9cgxLr8dQsyLxFT8MtXPg2wTvwNM2SCn97NHTTVpk8YtZkwAw=w500"
+    },
+    {
+        "id": "",
+        "title": "",
         "shortText": "",
-        "url": "",
-        "imageSrc": "https://lh3.googleusercontent.com/cpZwlaor8Rw7Pkk1wblwyMD0dAIkOI4yRabSCyMcAfN688yVddywm-WffUTcoWeT3kkDc315TSjevxd37JKOmBIyEJe3xoyFIi6eXcMbdUNYvUIVNAS35RIx5RmWc4yvyjlOlHIrsA=w500"
-    },
-    {
-        "id": "trees",
-        "title": "Interview with Danielle",
-        "shortText": "",
-        "url": "piece/freewrite",
-        "imageSrc": "https://lh3.googleusercontent.com/cpZwlaor8Rw7Pkk1wblwyMD0dAIkOI4yRabSCyMcAfN688yVddywm-WffUTcoWeT3kkDc315TSjevxd37JKOmBIyEJe3xoyFIi6eXcMbdUNYvUIVNAS35RIx5RmWc4yvyjlOlHIrsA=w500"
+        "url": "contact/",
+        "classNames": "border",
+        "imageSrc": "https://lh3.googleusercontent.com/0y1nGfVSaxz5DkT2P5aeJcgRNnoMBNU5THU9KOGfFn3OXQsZBdeqIPFrnvj_PaRmnzOQOfsA3mFHMRXa-z3SFTeSnMJBSPIWFRm4Shk1A5q8w1sTVlcnjbCfgM4X95N06Hs_dg-KKg=w500"
     }
 ]

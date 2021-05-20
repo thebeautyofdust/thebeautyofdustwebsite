@@ -80,16 +80,6 @@ class Main extends React.Component {
     }
   }
 
-  formatForGrid = (items) => {
-    return items.map(item => ({
-        id: item.id,
-        title: item.title,
-        shortText: item.shortText,
-        url: item.url,
-        imageSrc: item.imageSrc
-      })
-    );
-}
   render() {  
     const { items } = this.state;
 
@@ -108,7 +98,7 @@ class Main extends React.Component {
                 <LogoSubText>everyday imaginiation</LogoSubText>
               </LogoTitle>
             </TextStripContainer>
-            {items && items.length && <TopGrid items={this.formatForGrid(items)} />}
+            {items && items.length && <TopGrid items={items} />}
         </BodyContainer>
         <Footer />
     </ThemeProvider>

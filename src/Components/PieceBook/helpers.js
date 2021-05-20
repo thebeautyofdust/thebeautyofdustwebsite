@@ -12,7 +12,12 @@ const pieces = [
         title: 'walk in the woods',
         id: 'trees'
     },
-    
+    {
+        index: 2,
+        imgPath: 'https://lh3.googleusercontent.com/OJFVlSmmQ4GnNnxjdnHNT9mMgqK2W-_3HrViLjCjMOzziIz812_NuesBHCZemAWXqHZ1yxH-MDlDW0IcBM2cQvfQRZzDSk_Q546Fh1tk7X8WW9CvccLa_EPzTA5wpQrqy--W7utfBQ=w1200',
+        title: 'free write january 16th',
+        id: 'freewrite'
+    }
 ];
 
 export const getFirstPiece = () => {

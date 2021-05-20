@@ -16,8 +16,7 @@ const TileWrapper = styled('div')`
     width: 49.5vw;   
     height: 49.5vw;
 
-    @media ${devices.laptop} { 
-        
+    @media ${devices.laptop} {   
         width: 24.7vw;
         height: 24.7vw;
     }
@@ -29,11 +28,17 @@ const TileImage = styled('img')`
     flex: 1;
     object-fit: cover;
     overflow: hidden;
+    
+    &.border {
+        border: 3px solid black;
+    }
 `;
 
 const TileTitle = styled('p')`
     font-family: 'Cormorant Garamond', serif;
     margin: 0;
+    height: 25px;
+    font-size: 20px;
 `;
 
 const TileSubTitle = styled('p')`
@@ -53,11 +58,11 @@ const StyledLink = styled(Link)`
 
 class TopGrid extends React.Component {
    
-    renderTile({title, imageSrc, url, shortText}) {
+    renderTile({title, imageSrc, url, shortText, classNames}) {
         return (
             <StyledLink to={url}>
                 <TileWrapper>
-                    <TileImage src={imageSrc}></TileImage>
+                    <TileImage className={classNames} src={imageSrc}></TileImage>
                     <TileTitle>{title}</TileTitle>
                     <TileSubTitle>{shortText}</TileSubTitle>
                 </TileWrapper>

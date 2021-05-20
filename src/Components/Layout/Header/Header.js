@@ -69,7 +69,7 @@ const StyledLink = styled(Link)`
 `;
 
 const TestLogo = styled('img')`
-    width: 45px;
+    width: 40px;
     height: auto;
     object-fit: contain;
     margin-right: 10px;

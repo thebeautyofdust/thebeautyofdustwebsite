@@ -11,16 +11,16 @@ import TopGrid from './topgrid';
 import topItems from './top.json';
 
 const LogoImage = styled('img')`
-    width: 180px;
+    width: 110px;
     height: auto;
     object-fit: contain;
     
 
     @media ${devices.mobileL} { 
-        width: 220px;
+        width: 90px;
     }
     @media ${devices.tablet} { 
-      width: 280px;
+      width: 140px;
       margin-right: 10px;
     }
 `;
@@ -43,29 +43,30 @@ const TextStripContainer = styled('div')`
   font-size: 20px;
   padding: 30px 0px;
   align-items: center;    
-  padding: 50px 0px 80px 0;
+  padding: 130px 0px 160px
 
 `;
 
 const LogoTitle = styled('div')`
   display: flex;
   flex-direction: column;
+  font-size: 27px; 
 
   @media ${devices.mobileL} { 
-    font-size: 30px; 
+    font-size: 27px; 
   }
   @media ${devices.tablet} { 
-      font-size: 45px; 
+      font-size: 42px; 
   }
 `;
 
 const LogoSubText = styled('div')`
-  font-size: 10px;
+  font-size: 12px;
   @media ${devices.mobileL} { 
     font-size: 15px; 
   }
   @media ${devices.tablet} { 
-      font-size: 20px; 
+      font-size: 19px; 
   }
 `;
 

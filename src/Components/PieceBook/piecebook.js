@@ -6,6 +6,7 @@ import path from '../../images/trees3.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltLeft, faLongArrowAltRight} from '@fortawesome/free-solid-svg-icons'
 import { getFirstPiece, getNextPiece, getPrevPiece, getImageByKey } from './helpers';
+import { Chevron } from '../../Common/global';
 
 const BodyContainer = styled('div')`
   width: 100%;
@@ -46,25 +47,17 @@ const Image = styled('img')`
   }
 `
 
-const BackButton = styled('button')`
+const NextButton = styled(Chevron)`
   position: absolute;
-  top: calc(50vh);
-  left: 40px;
-  font-size: 25px;
-  border: none;
-  background: transparent;
-  color: white;
-  cursor: pointer;
-`
-
-const NextButton = styled('button')`
-  position: absolute;
-  top: calc(50vh);
+  top: calc(53vh);
   right: 40px; 
-  font-size: 25px;
-  border: none;
-  background: transparent;
-  color: white;
+  cursor: pointer;
+`;
+
+const BackButton = styled(Chevron)`
+  position: absolute;
+  top: calc(53vh);
+  left: 40px;
   cursor: pointer;
 `
 
@@ -129,12 +122,8 @@ class PieceBook extends React.Component {
         <Image className={index === 0 ? "active" : ""} src={shesaid} />
         <Image className={index === 1 ? "active" : ""}  src={path} /> 
 
-        <BackButton onClick={() => this.handleNextClick(index)}>
-          <FontAwesomeIcon icon={faLongArrowAltLeft} />
-        </BackButton>
-        <NextButton onClick={() => this.handlePrevClick(index)}>
-          <FontAwesomeIcon icon={faLongArrowAltRight} />
-        </NextButton>
+        <BackButton className="left" onClick={() => this.handleNextClick(index)} />
+        <NextButton onClick={() => this.handlePrevClick(index)} />
         <TitleContainer key={id}>
           <Title>{title}</Title>
           <Link to={`piece/${id}`}>

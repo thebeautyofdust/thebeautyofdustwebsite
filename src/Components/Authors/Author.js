@@ -43,7 +43,7 @@ class Author extends React.Component {
         <Header/>
         <Wrapper>
             more about {name}
-            <CommingSoon>Comming Soon</CommingSoon>
+            <CommingSoon>coming soon</CommingSoon>
         </Wrapper>
         <Footer />
     </ThemeProvider>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { Link } from 'react-router-dom';
-import { GlobalStyles } from '../../Common/global';
+import { GlobalStyles, Arrow } from '../../Common/global';
 import { theme } from '../../Common/theme';
 import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
@@ -128,36 +128,51 @@ const LearnMoreContainer = styled('div')`
   flex-direction: column;
 }
 `;
+// const DownArrow = styled('button')`
+//   background: none;
+//   border: none;
+//   position: fixed;
+//   right: 4vw;
+//   bottom: 4vh;
+//   font-size: 20px;  
+//   cursor: pointer;
+//   z-index:10;
+  
+//   &.white {
+//     color: white;
+//   }
+// `;
 
-const DownArrow = styled('button')`
-  background: none;
-  border: none;
+const DownArrow = styled(Arrow)`
   position: fixed;
   right: 4vw;
   bottom: 4vh;
-  font-size: 20px;  
-  cursor: pointer;
   z-index:10;
-  
-  &.white {
-    color: white;
-  }
+  cursor: pointer;
 `;
 
-const UpArrow = styled('button')`
-  background: none;
-  border: none;
+const UpArrow = styled(Arrow)`
   position: fixed;
-  right: 4vw;
+  right: calc(4vw - 11px);
   top: calc(4vh + 50px);
-  font-size: 20px;  
-  cursor: pointer;
   z-index:10;
-  
-  &.white {
-    color: white;
-  }
+  cursor: pointer;
 `;
+
+// const UpArrow = styled('button')`
+//   background: none;
+//   border: none;
+//   position: fixed;
+//   right: 4vw;
+//   top: calc(4vh + 50px);
+//   font-size: 20px;  
+//   cursor: pointer;
+//   z-index:10;
+  
+//   &.white {
+//     color: white;
+//   }
+// `;
 
 const InterviewContainer = styled('div')`
   font-family: 'Cormorant Garamond', serif;
@@ -273,8 +288,8 @@ class Piece extends React.Component {
         <GlobalStyles />
         <Header />
         <Wrapper>
-          {activeSection > 0 && <UpArrow className={activeSection === 1 && 'white'} onClick={this.upClick}><FontAwesomeIcon icon={faLongArrowAltUp} /></UpArrow>}
-          {activeSection < 3 && <DownArrow className={activeSection === 1 && 'white'} onClick={this.downClick}><FontAwesomeIcon icon={faLongArrowAltDown} /></DownArrow>}
+          {activeSection > 0 && <UpArrow className="up" color={activeSection === 1 && 'white'} onClick={this.upClick} />}
+          {activeSection < 3 && <DownArrow className="down" color={activeSection === 1 && 'white'} onClick={this.downClick} />}
           <Section className={activeSection == 0 ? 'active' : ''}>
             <TopText>
                 <Title>{title}</Title>

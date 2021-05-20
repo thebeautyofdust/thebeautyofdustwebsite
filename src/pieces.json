@@ -7,7 +7,7 @@
         "author": "Naomi Compton",
         "authorId": "nc",
         "subText": "",
-        "youtubeUrl": "https://www.youtube.com/embed/hICPmWyoMM0",
+        "youtubeUrl": "https://www.youtube.com/embed/hzcsNOUJAH4",
         "imageSrc": "https://lh3.googleusercontent.com/dblsNaRcoWcOcXuUYGnWmZPZRD6ZYBkFIMYr0VtvJysqi0VYuoy4L6DuAUZLOd_iTNPSR1z3zaLv4BV37nMEgWP5xmwNMGd6FT9wwfK0XXtTGv5J7WtChT0SDzPlnjQiL4FbWQwUnw=w500",
         "pieceText": [],
         "interviewUrl": "https://www.youtube.com/embed/F7khCiiRf3I",
@@ -21,7 +21,7 @@
         "author": "Justin Blass",
         "authorId": "jb",
         "subText": "",
-        "youtubeUrl": "https://www.youtube.com/embed/Zl2Z4vCUAMY",
+        "youtubeUrl": "https://www.youtube.com/embed/yHXdSXy7VlA",
         "imageSrc": "https://lh3.googleusercontent.com/OJFVlSmmQ4GnNnxjdnHNT9mMgqK2W-_3HrViLjCjMOzziIz812_NuesBHCZemAWXqHZ1yxH-MDlDW0IcBM2cQvfQRZzDSk_Q546Fh1tk7X8WW9CvccLa_EPzTA5wpQrqy--W7utfBQ=w500",
         "pieceText": "",
         "interviewUrl": "https://www.youtube.com/embed/J6jdLRiXpQQ",
@@ -40,5 +40,19 @@
         "pieceText": [],
         "interviewUrl": "https://www.youtube.com/embed/u9KzvAbw0rc",
         "categories": ["spokenword"]
+    },
+    {
+        "id": "neveralone",
+        "title": "never alone",
+        "shortText": "",
+        "firstName": "Strahan",
+        "author": "Strahan Coleman",
+        "authorId": "sc",
+        "subText": "",
+        "youtubeUrl": "https://www.youtube.com/embed/u2I_SA7fzpU",
+        "imageSrc": "https://lh3.googleusercontent.com/NcXXexA43UW2k-iSPODYMLL6Q8uyfPMHNuJQ-AksiQbIFQBGkxJK0CLn0RaXlrqnD8TP2ccN46bMi75AGYpz_puhWlmAYLlnidSDuouWrFWekbbspjMw32QVSwO10qrZvAXK_wcmDA=w500",
+        "pieceText": [],
+        "interviewUrl": "",
+        "categories": ["song"]
     }
 ]

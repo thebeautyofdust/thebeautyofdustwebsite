@@ -46,7 +46,7 @@ export const StyledMenu = styled.nav`
     }
   }
   .active {
-    text-decoration: line-through;
+    color: #c4c4c4;
     pointer-events: none;
     &:hover {
       color: ${({ theme }) => theme.primaryDark};

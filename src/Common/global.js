@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import arrow from '../images/arrow.png';
 import arrowwhite from '../images/arrow-white.png';
 import chevron from '../images/chevron.png';
-
+import chevronwhite from '../images/chevronwhite.png';
 
 export const GlobalStyles = createGlobalStyle`
   html, body {
@@ -18,12 +18,11 @@ export const GlobalStyles = createGlobalStyle`
     background: #FAFAFA;
     text-rendering: optimizeLegibility;
   }
-  `
+`;
 
 export const ContentWrapper = styled('div')`
   min-height: calc(100vh - 50px - 100px);
 `;  
-
 
 export const Arrow = styled('div')`
   background-image: url(${({ color }) => color === 'white' ? arrowwhite : arrow });
@@ -46,7 +45,7 @@ export const Arrow = styled('div')`
 `;  
 
 export const Chevron = styled('div')`
-  background-image: url(${chevron});
+background-image: url(${({ color }) => color === 'white' ? chevronwhite : chevron });
   width: 26px;
   height: 53px;
   background-size: contain;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components';
 import shesaid from '../../images/she-said2.png';
-import path from '../../images/trees3.png';
+import path from '../../images/trees.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltLeft, faLongArrowAltRight} from '@fortawesome/free-solid-svg-icons'
 import { getFirstPiece, getNextPiece, getPrevPiece, getImageByKey } from './helpers';
@@ -122,8 +122,8 @@ class PieceBook extends React.Component {
         <Image className={index === 0 ? "active" : ""} src={shesaid} />
         <Image className={index === 1 ? "active" : ""}  src={path} /> 
 
-        <BackButton className="left" onClick={() => this.handleNextClick(index)} />
-        <NextButton onClick={() => this.handlePrevClick(index)} />
+        <BackButton className="left" color="white" onClick={() => this.handleNextClick(index)} />
+        <NextButton color="white" onClick={() => this.handlePrevClick(index)} />
         <TitleContainer key={id}>
           <Title>{title}</Title>
           <Link to={`piece/${id}`}>

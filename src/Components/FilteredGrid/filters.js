@@ -6,6 +6,7 @@ const Wrapper = styled('div')`
     flex-direction: column;    
     width: 200px;
     position: relative;
+    font-family: 'Cormorant Garamond', serif;
 `;
 
 const Header = styled('div')`

@@ -147,6 +147,15 @@ const UpArrow = styled(Arrow)`
   cursor: pointer;
 `;
 
+const QuestionContainer = styled('div')`
+  font-family: 'Cormorant Garamond', serif;
+  bottom: 10vh;
+  left: 5vw;
+  position: absolute;
+  font-style: italic;
+  font-size: 13px;
+`;
+
 const InterviewContainer = styled('div')`
   font-family: 'Cormorant Garamond', serif;
   text-align: center;
@@ -318,6 +327,10 @@ class Piece extends React.Component {
             <PieceText>
              {this.getPieceText(id)}
             </PieceText>
+
+            <QuestionContainer>
+              Take note of your response after hearing the peice, did any part stand out? <br/>Could it relate to your context or role?
+            </QuestionContainer>
           </Section >
           <Section className={activeSection == 3 ? 'active' : ''}>
             <LearnMoreContainer>

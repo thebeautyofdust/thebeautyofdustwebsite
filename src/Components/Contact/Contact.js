@@ -14,8 +14,15 @@ const Wrapper = styled(ContentWrapper)`
 
 const ContactText = styled('div')`
   font-family: 'Cormorant Garamond', serif;
-  text-align: center;
-  padding: 20px;
+  padding: 1px;
+`;
+
+const Email = styled('div')`
+  font-family: 'Cormorant Garamond', serif;
+  padding-top: 20px;
+`;
+const Padding = styled('div')`
+  padding-top: 10px;
 `;
 
 function Contact() {
@@ -25,7 +32,13 @@ function Contact() {
       <GlobalStyles />
       <Wrapper>
         <ContactText>
-          If you want to know more or would like to collaborate, please send an email to <a href="mailto:thebeautyofdust@gmail.com">thebeautyofdust@gmail.com</a>.
+          <ContactText><i>we continue to add new content</i></ContactText>
+          <Padding />
+          <ContactText>send us an email to</ContactText>
+          <ContactText>join our mailing list</ContactText>
+          <ContactText>submit your piece</ContactText> 
+          <ContactText>collaborate with us</ContactText>
+          <Email><a href="mailto:thebeautyofdust@gmail.com">thebeautyofdust@gmail.com</a></Email>
         </ContactText>
       </Wrapper>
       <Footer />

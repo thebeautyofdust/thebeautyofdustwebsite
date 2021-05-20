@@ -71,10 +71,10 @@ class Authors extends React.Component {
 
         return (
             <Wrapper>
-                <FiltersWrapper>
+                {/* <FiltersWrapper>
                     <Filters items={filterItems} setFilter={this.setFilter}/>
                     <SeeAll onClick={() => this.setFilter("")}>See All</SeeAll>
-                </FiltersWrapper>
+                </FiltersWrapper> */}
                 {items && items.length && <Grid items={this.formatForGrid(items)} routePath="/author/"/>}
             </Wrapper>  
         );

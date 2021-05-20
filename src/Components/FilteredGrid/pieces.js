@@ -20,16 +20,25 @@ const FiltersWrapper = styled('div')`
 
 const SeeAll = styled('div')`
     cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
 `;
 
 const filterItems = [
     {
-        title: 'Spoken Work',
-        id: 'spokenword'
+        title: 'personal development',
+        id: 'personaldevelopment'
     },
     {
-        title: 'Trees',
-        id: 'trees'
+        title: 'spirituality ',
+        id: 'spirituality'
+    },
+    {
+        title: 'leadership',
+        id: 'leadership'
+    },
+    {
+        title: 'inspirational',
+        id: 'inspirational'
     }
 ];
 

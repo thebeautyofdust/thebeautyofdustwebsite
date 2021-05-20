@@ -76,6 +76,7 @@ const Title = styled('h1')`
 `
 
 const PieceButton = styled('button')`
+  font-family: 'Cormorant Garamond', serif;
   font-size: 15px;
   border: 1px solid white;
   background: transparent;

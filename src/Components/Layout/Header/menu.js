@@ -26,7 +26,6 @@ export const StyledMenu = styled.nav`
 
   a {
     font-size: 2rem;
-    text-transform: uppercase;
     padding: 2rem 0;
     font-weight: bold;
     font-family: 'Cormorant Garamond', serif;
@@ -65,16 +64,16 @@ const Menu = ({ open, setOpen, activePage}) => {
       }}
     >
       <a className={activePage === "pieces" ? "active" : ''} href="/#/pieces">
-        Pieces
+        pieces.
         </a>
       <a className={activePage === "authors" ? "active" : ''} href="/#/authors">
-        Authors
+        authors.
         </a>
       <a className={activePage === "about" ? "active" : ''} href="/#/about">
-        About us
+        about us.
       </a>
       <a className={activePage === "contact" ? "active" : ''} href="/#/contact">
-        Contact
+        contact.
       </a>
     </StyledMenu>
   )

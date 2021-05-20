@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components';
-import shesaid from '../../images/she-said2.png';
+import shesaid from '../../images/she-said.jpg';
 import path from '../../images/trees.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltLeft, faLongArrowAltRight} from '@fortawesome/free-solid-svg-icons'

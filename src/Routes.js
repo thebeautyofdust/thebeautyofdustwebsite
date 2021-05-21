@@ -7,6 +7,7 @@ import Authors from "./Components/Authors/Authors";
 import Author from "./Components/Authors/Author";
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
+import Support from "./Components/Support/Support";
 import NotFound from "./Components/NotFound/NotFound";
 import ScrollToTop from "./Common/scrollToTop";
 
@@ -21,6 +22,7 @@ function Routes() {
       <Route exact path="/author/:id" component={Author} />
       <Route exact path="/about" component={About} />
       <Route exact path="/contact" component={Contact} />
+      <Route exact path="/support" component={Support} />
       <Route exact path="/shesaid">
         <Redirect to="/piece/shesaid" />
       </Route>

@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { devices } from './devices';
 import arrow from '../images/arrow.png';
 import arrowwhite from '../images/arrow-white.png';
 import chevron from '../images/chevron.png';
@@ -45,13 +46,22 @@ export const Arrow = styled('div')`
 `;  
 
 export const Chevron = styled('div')`
-background-image: url(${({ color }) => color === 'white' ? chevronwhite : chevron });
-  width: 26px;
-  height: 53px;
+  background-image: url(${({ color }) => color === 'white' ? chevronwhite : chevron });
+  width: 20px;
+  height: 27px; 
   background-size: contain;
   background-repeat: no-repeat;
 
   &.left {
     transform: rotate(180deg);
+  }
+
+  @media ${devices.mobileL} { 
+    width: 20px;
+    height: 43px; 
+  }
+  @media ${devices.tablet} { 
+    width: 26px;
+    height: 53px; 
   }
 `;  

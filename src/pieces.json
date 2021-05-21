@@ -54,5 +54,19 @@
         "pieceText": [],
         "interviewUrl": "",
         "categories": ["spirituality", "inspirational"]
+    },
+    {
+        "id": "celebration",
+        "title": "celebration",
+        "shortText": "",
+        "firstName": "Stevie",
+        "author": "Stevie Davis-Tana",
+        "authorId": "sdt",
+        "subText": "",
+        "youtubeUrl": "https://www.youtube.com/embed/pRQLz-Ispi4",
+        "imageSrc": "https://lh3.googleusercontent.com/wT71PYQGyyHUAsv4nr868pNiNeBhwH-ynDDq-h-YjYK6VDzGxIwsNuCA7pFQCCIpBQbeF2gF-w8PGcR5pstqielOOur1nl0XByEIK9V1YG4k9q68zSDEr1jC41irkC4-uYuPAQw1dQ=w500",
+        "pieceText": [],
+        "interviewUrl": "",
+        "categories": ["personaldevelopment", "inspirational"]
     }
 ]

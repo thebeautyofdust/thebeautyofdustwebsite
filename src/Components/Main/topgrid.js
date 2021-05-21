@@ -39,6 +39,10 @@ const TileTitle = styled('p')`
     margin: 0;
     height: 25px;
     font-size: 20px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 const TileSubTitle = styled('p')`
@@ -46,6 +50,10 @@ const TileSubTitle = styled('p')`
     font-size: 12px;
     margin: 0;
     height: 14px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
 `;
 

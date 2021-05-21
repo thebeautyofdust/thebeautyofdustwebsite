@@ -74,6 +74,9 @@ const Menu = ({ open, setOpen, activePage}) => {
       </a>
       <a className={activePage === "contact" ? "active" : ''} href="/#/contact">
         contact.
+      </a> 
+      <a className={activePage === "support" ? "active" : ''} href="/#/support">
+        support.
       </a>
     </StyledMenu>
   )

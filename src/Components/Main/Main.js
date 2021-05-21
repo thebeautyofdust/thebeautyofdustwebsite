@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../../Common/global';
 import { theme } from '../../Common/theme';
@@ -47,6 +48,10 @@ const TextStripContainer = styled('div')`
 
 `;
 
+const BottomTextStripContainer = styled(TextStripContainer)`
+    flex-direction: column;
+`;
+
 const LogoTitle = styled('div')`
   display: flex;
   flex-direction: column;
@@ -68,6 +73,29 @@ const LogoSubText = styled('div')`
   @media ${devices.tablet} { 
       font-size: 19px; 
   }
+`;
+
+const For = styled('div')`
+  margin: 0 20px;
+  height: 100%;
+`;
+
+const SandsText = styled('div')`
+  display: flex;
+  flex-direction: column;
+  font-size: 27px; 
+  padding: 15px;
+  
+  @media ${devices.tablet} { 
+      font-size: 35px; 
+  }
+`;
+
+const StyledLink = styled(Link)`
+border: 1px solid black;
+text-decoration: none;
+color: black;
+padding: 10px 20px;
 `;
 
 class Main extends React.Component {
@@ -99,6 +127,13 @@ class Main extends React.Component {
               </LogoTitle>
             </TextStripContainer>
             {items && items.length && <TopGrid items={items} />}
+            <BottomTextStripContainer>
+              <For>for</For>
+              <SandsText>
+                Submissions & Subscriptions
+              </SandsText>
+              <StyledLink to="contact">click here</StyledLink>
+            </BottomTextStripContainer>
         </BodyContainer>
         <Footer />
     </ThemeProvider>

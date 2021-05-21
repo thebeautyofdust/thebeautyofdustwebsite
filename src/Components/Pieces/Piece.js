@@ -329,7 +329,7 @@ class Piece extends React.Component {
             </PieceText>
 
             <QuestionContainer>
-              Take note of your response after hearing the peice, did any part stand out? <br/>Could it relate to your context or role?
+              Take note of your response after hearing the piece, did any part stand out? <br/>Could it relate to your context or role?
             </QuestionContainer>
           </Section >
           <Section className={activeSection == 3 ? 'active' : ''}>

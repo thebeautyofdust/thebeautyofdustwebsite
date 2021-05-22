@@ -32,8 +32,9 @@ function Support() {
       <GlobalStyles />
       <Wrapper>
         <SupportText>
-          <SupportText>the beauty of dust is run by volunteers</SupportText>
-          <SupportText>if you like what we are doing and want to support us, please send us an email to find out how</SupportText>
+          <SupportText>Partner with our artists to help them create more works.</SupportText>
+          <SupportText>Send stories about how these art pieces have impacted your context.</SupportText>
+          <SupportText>Contact us for further information of how you can support our artists.</SupportText>
           <Email><a href="mailto:thebeautyofdust@gmail.com">thebeautyofdust@gmail.com</a></Email>
         </SupportText>
       </Wrapper>

@@ -43,6 +43,9 @@ const Logo = styled('h1')`
     font-size: 14px;
     font-weight: normal;
     padding: 2px 6px;
+    position: absolute;
+    right: 50px;
+    text-align: right;
 
     @media ${devices.mobileL} { 
         font-size: 16px; 

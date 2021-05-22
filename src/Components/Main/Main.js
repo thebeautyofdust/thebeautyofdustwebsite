@@ -85,6 +85,7 @@ const SandsText = styled('div')`
   flex-direction: column;
   font-size: 27px; 
   padding: 15px;
+  text-align: center;
   
   @media ${devices.tablet} { 
       font-size: 35px; 

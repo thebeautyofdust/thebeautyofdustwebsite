@@ -15,7 +15,7 @@ const LogoImage = styled('img')`
     width: 110px;
     height: auto;
     object-fit: contain;
-    
+    overflow: initial;
 
     @media ${devices.mobileL} { 
         width: 90px;

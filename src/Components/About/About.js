@@ -55,8 +55,8 @@ function About() {
           <Padding size="5" />
           <Text size="20"><i>everyday imagination</i></Text>
           <Padding size="40" />
-          <Text size="21" width="620"><strong>Gathering the voices of artists, who see and shape the hidden aspects of life. 
-          They awaken our own imaginations. 
+          <Text size="21" width="700"><strong>Gathering the voices of artists, who see and shape the hidden aspects of life.</strong></Text>
+          <Text size="21" width="700"><strong>They awaken our own imaginations. 
           They help <i>us</i> create something beautiful with what <i>we</i> have and out of who <i>we</i> are.</strong></Text>
           <Padding size="30"/>
 

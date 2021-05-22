@@ -28,12 +28,14 @@ const Padding = styled('div')`
 function Support() {
   return (
     <ThemeProvider theme={theme}>
-      <Header activePage="contact"/>
+      <Header activePage="support"/>
       <GlobalStyles />
       <Wrapper>
-        <SupportText>
-          <SupportText>Partner with our artists to help them create more works.</SupportText>
+        <SupportText style={{padding: '0 30px'}}>
+          <SupportText><i>Partner with our artists to help them create more works.</i></SupportText>
+          <br/>
           <SupportText>Send stories about how these art pieces have impacted your context.</SupportText>
+          <br/>
           <SupportText>Contact us for further information of how you can support our artists.</SupportText>
           <Email><a href="mailto:thebeautyofdust@gmail.com">thebeautyofdust@gmail.com</a></Email>
         </SupportText>

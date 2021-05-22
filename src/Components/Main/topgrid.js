@@ -7,24 +7,21 @@ const Wrapper = styled('div')`
     display: flex;   
     flex-wrap: wrap;
     padding: 0.5vw;
+    max-width: 1000px;
+    margin: auto;
+
 `;
 
 const TileWrapper = styled('div')`
     display: flex;    
     flex-direction: column;
-    padding: 10px;
-    width: 49.5vw;   
-    height: 49.5vw;
-
-    @media ${devices.laptop} {   
-        width: 24.7vw;
-        height: 24.7vw;
-    }
+    padding: 15px;      
+    flex: 1;
 `;
 
 const TileImage = styled('img')`
     width: 100%;
-    height: 50vw;
+    height: 100%;
     flex: 1;
     object-fit: cover;
     overflow: hidden;
@@ -47,7 +44,7 @@ const TileTitle = styled('p')`
 
 const TileSubTitle = styled('p')`
     font-family: 'Cormorant Garamond', serif;
-    font-size: 12px;
+    font-size: 15px;
     margin: 0;
     height: 14px;
     width: 100%;
@@ -58,17 +55,24 @@ const TileSubTitle = styled('p')`
 `;
 
 const StyledLink = styled(Link)`
+    display: flex;
     text-decoration: none;
     color: black;
+    width: 100%;
+
+    @media ${devices.tablet} { 
+        width: 49.5%;
+    }
+
 `;
 
 
 
 class TopGrid extends React.Component {
    
-    renderTile({title, imageSrc, url, shortText, classNames}) {
+    renderTile({id, title, imageSrc, url, shortText, classNames}) {
         return (
-            <StyledLink to={url}>
+            <StyledLink id={id} to={url}>
                 <TileWrapper>
                     <TileImage className={classNames} src={imageSrc}></TileImage>
                     <TileTitle>{title}</TileTitle>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { devices } from '../../Common/devices';
 
@@ -57,7 +57,7 @@ const TileSubTitle = styled('p')`
 
 `;
 
-const StyledLink = styled(NavLink)`
+const StyledLink = styled(Link)`
     text-decoration: none;
     color: black;
 `;

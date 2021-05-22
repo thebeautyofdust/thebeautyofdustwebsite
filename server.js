@@ -6,9 +6,9 @@ var app = express();
 app.use(express.static(path.join(__dirname, 'dist')));
 app.set('port', process.env.PORT || 8080);
 
-app.get('*', (request, response) => {
-  response.sendFile(path.resolve(__dirname, 'index.html'))
-});
+app.get("/shesaid", (req, res) => {
+  res.status(301).redirect("#/piece/shesaid")
+})
 
 var server = app.listen(app.get('port'), function() {
   console.log('listening on port ', server.address().port);

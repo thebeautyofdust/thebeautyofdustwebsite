@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components';
 import shesaid from '../../images/she-said.jpg';
 import path from '../../images/trees.jpg';
@@ -132,9 +132,9 @@ class PieceBook extends React.Component {
         <NextButton color="white" onClick={() => this.handlePrevClick(index)} />
         <TitleContainer key={id}>
           <Title>{title}</Title>
-          <NavLink to={`piece/${id}`}>
+          <Link to={`piece/${id}`}>
             <PieceButton>go to piece</PieceButton>
-          </NavLink>
+          </Link>
         </TitleContainer>
       </ImageContainer>
     </BodyContainer>

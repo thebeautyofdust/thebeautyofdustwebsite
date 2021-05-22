@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles, ContentWrapper } from '../../Common/global';
 import { theme } from '../../Common/theme';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
@@ -21,7 +21,7 @@ const AboutText = styled('div')`
   max-width: 900px;
 `;
 
-const StyledLink = styled(NavLink)`
+const StyledLink = styled(Link)`
     pointer: cursor;
 `;
 

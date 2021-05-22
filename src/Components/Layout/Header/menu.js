@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { bool } from 'prop-types';
 import styled from 'styled-components';
 
@@ -54,7 +54,7 @@ export const StyledMenu = styled.nav`
   }
 `;
 
-const StyledLink = styled(NavLink)`
+const StyledLink = styled(Link)`
   font-size: 2rem;
   padding: 2rem 0;
   font-weight: bold;
@@ -85,21 +85,21 @@ const Menu = ({ open, setOpen, activePage}) => {
         }
       }}
     >
-      <StyledLink className={activePage === "pieces" ? "active" : ''} to="pieces">
+      <a className={activePage === "pieces" ? "active" : ''} href="/#/pieces">
         pieces.
-        </StyledLink>
-      <StyledLink className={activePage === "authors" ? "active" : ''} to="authors">
+      </a>
+      <a className={activePage === "authors" ? "active" : ''} href="/#/authors">
         authors.
-        </StyledLink>
-      <StyledLink className={activePage === "about" ? "active" : ''} to="about">
+      </a>
+      <a className={activePage === "about" ? "active" : ''} href="/#/about">
         about us.
-      </StyledLink>
-      <StyledLink className={activePage === "contact" ? "active" : ''} to="contact">
+      </a>
+      <a className={activePage === "contact" ? "active" : ''} href="/#/contact">
         contact.
-      </StyledLink> 
-      <StyledLink className={activePage === "support" ? "active" : ''} to="support">
+      </a> 
+      <a className={activePage === "support" ? "active" : ''} href="/#/support">
         support.
-      </StyledLink>
+      </a>
     </StyledMenu>
   )
 }

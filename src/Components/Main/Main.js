@@ -77,7 +77,7 @@ const LogoSubText = styled('div')`
 
 const For = styled('div')`
   margin: 0 20px;
-  height: 100%;
+  height: auto;
 `;
 
 const SandsText = styled('div')`

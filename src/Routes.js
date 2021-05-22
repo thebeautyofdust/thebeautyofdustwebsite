@@ -9,12 +9,12 @@ import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
 import Support from "./Components/Support/Support";
 import NotFound from "./Components/NotFound/NotFound";
-import ScrollToTop from "./Common/scrollToTop";
+// import ScrollToTop from "./Common/scrollToTop";
 
 function Routes() {
   return (
     <>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <Route exact path="/" component={Main} />
       <Route exact path="/pieces" component={Pieces} />
       <Route exact path="/piece/:id" component={Piece} />
@@ -23,9 +23,9 @@ function Routes() {
       <Route exact path="/about" component={About} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/support" component={Support} />
-      <Route exact path="/shesaid">
+      {/* <Route exact path="/shesaid">
         <Redirect to="/piece/shesaid" />
-      </Route>
+      </Route> */}
       {/* <Route path='*' exact={true} component={NotFound} /> */}
     </>
   );

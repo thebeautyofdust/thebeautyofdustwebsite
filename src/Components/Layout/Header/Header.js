@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Burger from './burger';
 import Menu from './menu';
@@ -59,7 +59,7 @@ const HeaderRight = styled('div')`
     flex: 1;
 `
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
     text-decoration: none;
     color: black;
     display: flex;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { bool } from 'prop-types';
 import styled from 'styled-components';
 
@@ -53,6 +54,27 @@ export const StyledMenu = styled.nav`
   }
 `;
 
+const StyledLink = styled(NavLink)`
+  font-size: 2rem;
+  padding: 2rem 0;
+  font-weight: bold;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.5rem;
+  color: ${({ theme }) => theme.primaryDark};
+  text-decoration: none;
+  transition: color 0.3s linear;
+  width: 270px;
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.primaryHover};
+  }
+`;
+
 const Menu = ({ open, setOpen, activePage}) => {
   console.log("active", activePage);
   return (
@@ -63,21 +85,21 @@ const Menu = ({ open, setOpen, activePage}) => {
         }
       }}
     >
-      <a className={activePage === "pieces" ? "active" : ''} href="/#/pieces">
+      <StyledLink className={activePage === "pieces" ? "active" : ''} to="pieces">
         pieces.
-        </a>
-      <a className={activePage === "authors" ? "active" : ''} href="/#/authors">
+        </StyledLink>
+      <StyledLink className={activePage === "authors" ? "active" : ''} to="authors">
         authors.
-        </a>
-      <a className={activePage === "about" ? "active" : ''} href="/#/about">
+        </StyledLink>
+      <StyledLink className={activePage === "about" ? "active" : ''} to="about">
         about us.
-      </a>
-      <a className={activePage === "contact" ? "active" : ''} href="/#/contact">
+      </StyledLink>
+      <StyledLink className={activePage === "contact" ? "active" : ''} to="contact">
         contact.
-      </a> 
-      <a className={activePage === "support" ? "active" : ''} href="/#/support">
+      </StyledLink> 
+      <StyledLink className={activePage === "support" ? "active" : ''} to="support">
         support.
-      </a>
+      </StyledLink>
     </StyledMenu>
   )
 }

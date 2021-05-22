@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { GlobalStyles, Arrow } from '../../Common/global';
 import { theme } from '../../Common/theme';
 import Header from '../Layout/Header/Header';
@@ -67,7 +67,7 @@ const GoToArtist = styled('button')`
   font-family: 'Cormorant', serif;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
     text-decoration: none;
     color: black;
     display: flex;

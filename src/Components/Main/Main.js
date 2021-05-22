@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../../Common/global';
 import { theme } from '../../Common/theme';
@@ -91,7 +91,7 @@ const SandsText = styled('div')`
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
 border: 1px solid black;
 text-decoration: none;
 color: black;

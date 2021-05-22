@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import styled from 'styled-components';
 
@@ -33,7 +33,7 @@ const SubText = styled('p')`
   font-size: 20px;
 `
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
     text-decoration: none;
     color: black;
 `;

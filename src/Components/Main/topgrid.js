@@ -24,7 +24,7 @@ const TileImage = styled('img')`
     height: 100%;
     flex: 1;
     object-fit: cover;
-    overflow: hidden;
+    overflow: visible;
     
     &.border {
         border: 3px solid black;

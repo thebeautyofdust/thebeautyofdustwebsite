@@ -39,6 +39,10 @@ const filterItems = [
     {
         title: 'inspirational',
         id: 'inspirational'
+    },
+    {
+        title: 'community',
+        id: 'community'
     }
 ];
 

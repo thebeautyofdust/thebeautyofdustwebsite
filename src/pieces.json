@@ -25,7 +25,7 @@
         "imageSrc": "https://lh3.googleusercontent.com/OJFVlSmmQ4GnNnxjdnHNT9mMgqK2W-_3HrViLjCjMOzziIz812_NuesBHCZemAWXqHZ1yxH-MDlDW0IcBM2cQvfQRZzDSk_Q546Fh1tk7X8WW9CvccLa_EPzTA5wpQrqy--W7utfBQ=w500",
         "pieceText": "",
         "interviewUrl": "https://www.youtube.com/embed/J6jdLRiXpQQ",
-        "categories": ["inspirational", "personaldevelopment"]
+        "categories": ["inspirational", "personaldevelopment", "community"]
     },
     {
         "id": "freewrite",
@@ -67,6 +67,6 @@
         "imageSrc": "https://lh3.googleusercontent.com/wT71PYQGyyHUAsv4nr868pNiNeBhwH-ynDDq-h-YjYK6VDzGxIwsNuCA7pFQCCIpBQbeF2gF-w8PGcR5pstqielOOur1nl0XByEIK9V1YG4k9q68zSDEr1jC41irkC4-uYuPAQw1dQ=w500",
         "pieceText": [],
         "interviewUrl": "",
-        "categories": ["personaldevelopment", "inspirational"]
+        "categories": ["personaldevelopment", "inspirational", "leadership", "community"]
     }
 ]

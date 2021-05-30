@@ -4,6 +4,7 @@ import { GlobalStyles, ContentWrapper } from '../../Common/global';
 import { theme } from '../../Common/theme';
 import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
+import ContactFrom from './contactForm';
 
 const Wrapper = styled(ContentWrapper)`
   display: flex;
@@ -31,7 +32,8 @@ function Contact() {
       <Header activePage="contact"/>
       <GlobalStyles />
       <Wrapper>
-        <ContactText>
+        <ContactFrom />
+        {/* <ContactText>
           <ContactText><i>we continue to add new content</i></ContactText>
           <Padding />
           <ContactText>send us an email to</ContactText>
@@ -39,7 +41,7 @@ function Contact() {
           <ContactText>submit your piece</ContactText> 
           <ContactText>collaborate with us</ContactText>
           <Email><a href="mailto:thebeautyofdust@gmail.com">thebeautyofdust@gmail.com</a></Email>
-        </ContactText>
+        </ContactText> */}
       </Wrapper>
       <Footer />
     </ThemeProvider>

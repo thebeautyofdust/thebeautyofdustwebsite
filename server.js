@@ -31,12 +31,14 @@ app.post('/send', (req, res) => {
       </ul>
       `
     };
+    console.log('send it here', mailOptions)
 
     transporter.sendMail(mailOptions, function (err, info) {
       if (err) {
+        console.log(err);
         res.status(500).send({
           success: false,
-          message: 'Something went wrong. Try again later'
+          message: 'Something went wrong. Try again later 2'
         });
       } else {
         res.send({
@@ -46,9 +48,10 @@ app.post('/send', (req, res) => {
       }
     });
   } catch (error) {
+    console.log(error);
     res.status(500).send({
       success: false,
-      message: 'Something went wrong. Try again later'
+      message: 'Something went wrong. Try again later 1'
     });
   }
 });

@@ -9,19 +9,18 @@ import ContactFrom from './contactForm';
 const Wrapper = styled(ContentWrapper)`
   display: flex;
   flex: 1;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  max-width: 350px;
+  margin: auto;
 `;
 
 const ContactText = styled('div')`
   font-family: 'Cormorant Garamond', serif;
   padding: 1px;
+  text-align: center;
 `;
 
-const Email = styled('div')`
-  font-family: 'Cormorant Garamond', serif;
-  padding-top: 20px;
-`;
 const Padding = styled('div')`
   padding-top: 10px;
 `;
@@ -32,16 +31,15 @@ function Contact() {
       <Header activePage="contact"/>
       <GlobalStyles />
       <Wrapper>
-        <ContactFrom />
-        {/* <ContactText>
+        <ContactText>
           <ContactText><i>we continue to add new content</i></ContactText>
           <Padding />
-          <ContactText>send us an email to</ContactText>
+          <ContactText>send us a message to</ContactText>
           <ContactText>join our mailing list</ContactText>
           <ContactText>submit your piece</ContactText> 
           <ContactText>collaborate with us</ContactText>
-          <Email><a href="mailto:thebeautyofdust@gmail.com">thebeautyofdust@gmail.com</a></Email>
-        </ContactText> */}
+        </ContactText>
+        <ContactFrom />
       </Wrapper>
       <Footer />
     </ThemeProvider>

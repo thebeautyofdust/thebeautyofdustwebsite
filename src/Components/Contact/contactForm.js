@@ -9,6 +9,8 @@ const Wrapper = styled('div')`
 const Form = styled('form')`
   display: flex;
   flex-direction: column;
+  min-width: 300px;
+  -webkit-appearance: none;
 `;
 
 const ContactLabel = styled('label')`
@@ -16,11 +18,38 @@ const ContactLabel = styled('label')`
 `;
 const ContactInput = styled('input')`
   font-family: 'Cormorant Garamond', serif;
+  border: 1px solid black;
+  padding: 9px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+
+  &:focus-visible, &:focus {
+    border: 1px solid black;
+  }
 `;
 
 const Button = styled('button')`
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cormorant Garamond', serif;    
+  background: none;
+  border-radius: 0;
+  padding: 10px;
+  margin-top: 20px;
+  border: 3px solid black;
+  -webkit-appearance: none;
 `;
+
+const ResponseText = styled('p')`
+  font-family: 'Cormorant Garamond', serif;    
+  font-size: 10px;
+  &.success {
+
+  }
+  &.error {
+    color: red;
+  }
+`;
+
 
 
 const ContactForm = () => {
@@ -32,7 +61,7 @@ const ContactForm = () => {
   });
 
   const [result, setResult] = useState(null);
-  
+
   const sendEmail = event => {
     event.preventDefault();
     axios
@@ -65,49 +94,58 @@ const ContactForm = () => {
 
   return (
     <Wrapper>
-       {result && (
-        <p className={`${result.success ? 'success' : 'error'}`}>
-          {result.message}
-        </p>
-      )}
+
       <Form onSubmit={sendEmail}>
-          <ContactLabel>Full Name</ContactLabel>
-          <ContactInput
-            type="text"
-            name="name"
-            value={state.name}
-            placeholder="Enter your full name"
-            onChange={onInputChange}
-          />
-          <ContactLabel>Email</ContactLabel>
-          <ContactInput
-            type="text"
-            name="email"
-            value={state.email}
-            placeholder="Enter your email"
-            onChange={onInputChange}
-          />
-          <ContactLabel>Subject</ContactLabel>
-          <ContactInput
-            type="text"
-            name="subject"
-            value={state.subject}
-            placeholder="Enter subject"
-            onChange={onInputChange}
-          />
-          <ContactLabel>Message</ContactLabel>
-          <ContactInput
-            as="textarea"
-            name="message"
-            value={state.message}
-            rows="3"
-            placeholder="Enter your message"
-            onChange={onInputChange}
-          />
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <ContactLabel>Full Name</ContactLabel>
+        <ContactInput
+          type="text"
+          name="name"
+          value={state.name}
+          placeholder="Enter your full name"
+          onChange={onInputChange}
+        />
+        <ContactLabel>Email</ContactLabel>
+        <ContactInput
+          type="text"
+          name="email"
+          value={state.email}
+          placeholder="Enter your email"
+          onChange={onInputChange}
+        />
+        <ContactLabel>Subject</ContactLabel>
+        <ContactInput
+          type="text"
+          name="subject"
+          value={state.subject}
+          placeholder="Enter subject"
+          onChange={onInputChange}
+        />
+        <ContactLabel>Message</ContactLabel>
+        <ContactInput
+          as="textarea"
+          name="message"
+          value={state.message}
+          rows="3"
+          placeholder="Enter your message"
+          onChange={onInputChange}
+        />
+        {
+          result && result.success === 'success' ? 
+            (
+            <ResponseText className="error">
+              {result.message}
+            </ResponseText>
+            ) : 
+            (<Button variant="primary" type="submit">
+              Submit
+            </Button>)
+        }
       </Form>
+      {(result && result.success === 'error') ?
+        <ResponseText className="error">
+          {result.message}
+        </ResponseText>
+      : null}
     </Wrapper>
   );
 };

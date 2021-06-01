@@ -9,8 +9,9 @@ const Wrapper = styled('div')`
 const Form = styled('form')`
   display: flex;
   flex-direction: column;
-  min-width: 300px;
   -webkit-appearance: none;
+  width: 100%;
+  padding: 0 10px;
 `;
 
 const ContactLabel = styled('label')`

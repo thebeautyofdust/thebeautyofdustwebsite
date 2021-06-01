@@ -12,16 +12,16 @@ import TopGrid from './topgrid';
 import topItems from './top.json';
 
 const LogoImage = styled('img')`
-    width: 110px;
+    width: 70px;
     height: auto;
     object-fit: contain;
     overflow: initial;
 
     @media ${devices.mobileL} { 
-        width: 90px;
+        width: 70px;
     }
     @media ${devices.tablet} { 
-      width: 140px;
+      width: 98px;
       margin-right: 10px;
     }
 `;
@@ -44,34 +44,35 @@ const TextStripContainer = styled('div')`
   font-size: 20px;
   padding: 30px 0px;
   align-items: center;    
-  padding: 130px 0px 160px
-
+  padding: 130px 0px 160px;
+  padding-top: 20px;
 `;
 
 const BottomTextStripContainer = styled(TextStripContainer)`
     flex-direction: column;
+    padding: 130px 0px 160px;
 `;
 
 const LogoTitle = styled('div')`
   display: flex;
   flex-direction: column;
-  font-size: 27px; 
+  font-size: 20px; 
 
   @media ${devices.mobileL} { 
-    font-size: 27px; 
+    font-size: 20px; 
   }
   @media ${devices.tablet} { 
-      font-size: 42px; 
+      font-size: 27px; 
   }
 `;
 
 const LogoSubText = styled('div')`
-  font-size: 12px;
+  font-size: 10px;
   @media ${devices.mobileL} { 
-    font-size: 15px; 
+    font-size: 12px; 
   }
   @media ${devices.tablet} { 
-      font-size: 19px; 
+      font-size: 15px; 
   }
 `;
 
@@ -99,6 +100,28 @@ color: black;
 padding: 10px 20px;
 `;
 
+
+const StyledBlurbContainer = styled('div')`
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+`;
+
+const StyledBlurb = styled('div')`
+font-family: 'Cormorant Garamond', serif;
+max-width: 90vw;
+padding: 40px;
+font-size: 47px;
+margin-top: 70px;
+font-style: italic;
+
+@media ${devices.tablet} { 
+    font-size: 55px; 
+}
+`;
+
+
 class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -120,11 +143,16 @@ class Main extends React.Component {
             <TopContainer>
                 <PieceBook />
             </TopContainer>
+            <StyledBlurbContainer>
+              <StyledBlurb>Gathering the voices of artists, who see and shape the hidden aspects of life.
+              They awaken our own imaginations. They help us create something beautiful with what we have and out of who we are.
+              </StyledBlurb>
+            </StyledBlurbContainer>
             <TextStripContainer>
               <LogoImage src={logo} />
               <LogoTitle>
                 the beauty of dust
-                <LogoSubText>everyday imaginiation</LogoSubText>
+                <LogoSubText>everyday imagination</LogoSubText>
               </LogoTitle>
             </TextStripContainer>
             {items && items.length && <TopGrid items={items} />}

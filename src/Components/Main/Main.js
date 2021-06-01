@@ -112,12 +112,13 @@ const StyledBlurb = styled('div')`
 font-family: 'Cormorant Garamond', serif;
 max-width: 90vw;
 padding: 40px;
-font-size: 47px;
+font-size: 35px;
 margin-top: 70px;
 font-style: italic;
 
 @media ${devices.tablet} { 
-    font-size: 55px; 
+    font-size: 55px;     
+    padding: 15px;
 }
 `;
 

@@ -100,6 +100,13 @@ const StyledLink = styled(Link)`
     align-items: center;
 `;
 
+
+const UntyledLink = styled(Link)`
+    text-decoration: none;
+    color: black;
+    pointer: cursor;
+`;
+
 const TestLogo = styled('img')`
     width: 40px;
     height: auto;
@@ -123,8 +130,9 @@ function Header(props) {
                 </div>
             </HeaderLeft>
             <HeaderLogo>
-
-            <LogoSub>everyday imagination</LogoSub>
+            <UntyledLink to="/">
+                <LogoSub>everyday imagination</LogoSub>
+            </UntyledLink>
             </HeaderLogo>
             <HeaderRight>
                 <StyledLink to="/">

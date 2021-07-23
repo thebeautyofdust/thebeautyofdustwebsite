@@ -17,6 +17,7 @@ const TileWrapper = styled('div')`
     flex-direction: column;
     padding: 15px;      
     flex: 1;
+    min-height: 350px;
 `;
 
 const TileImage = styled('img')`

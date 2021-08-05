@@ -85,14 +85,14 @@ const Menu = ({ open, setOpen, activePage}) => {
         }
       }}
     >
+      <a className={activePage === "about" ? "active" : ''} href="/#/about">
+        about us.
+      </a>
       <a className={activePage === "pieces" ? "active" : ''} href="/#/pieces">
         pieces.
       </a>
       <a className={activePage === "authors" ? "active" : ''} href="/#/authors">
         authors.
-      </a>
-      <a className={activePage === "about" ? "active" : ''} href="/#/about">
-        about us.
       </a>
       <a className={activePage === "contact" ? "active" : ''} href="/#/contact">
         contact.

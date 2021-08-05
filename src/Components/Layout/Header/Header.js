@@ -33,7 +33,10 @@ const HeaderLeft = styled('div')`
 `
 
 const HeaderLogo = styled('div')`
-    flex: 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 const Logo = styled('h1')`
@@ -42,7 +45,7 @@ const Logo = styled('h1')`
     font-family: 'Cormorant Garamond', serif;
     font-size: 14px;
     font-weight: normal;
-    padding: 2px 6px;
+    padding: 2px 2px;
     position: absolute;
     right: 50px;
     text-align: right;
@@ -53,6 +56,32 @@ const Logo = styled('h1')`
     @media ${devices.tablet} { 
         font-size: 18px; 
     }
+
+    @media ${devices.maxTablet} { 
+        position: absolute;
+        right: 57px;
+        top: 10px;
+        font-size: 16px;
+    }
+`
+
+
+const LogoSub = styled('h1')`
+    font-family: 'Cormorant Garamond', serif;
+    margin: 0;
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 100;
+
+    @media ${devices.maxTablet} { 
+        position: absolute;
+        right: 57px;
+        top: 30px;
+        font-size: 11px;
+        padding-right: 2px;
+    }
+
 `
 
 const HeaderRight = styled('div')`
@@ -69,6 +98,13 @@ const StyledLink = styled(Link)`
     justify-content: center;
     pointer: cursor;
     align-items: center;
+`;
+
+
+const UntyledLink = styled(Link)`
+    text-decoration: none;
+    color: black;
+    pointer: cursor;
 `;
 
 const TestLogo = styled('img')`
@@ -94,6 +130,9 @@ function Header(props) {
                 </div>
             </HeaderLeft>
             <HeaderLogo>
+            <UntyledLink to="/">
+                <LogoSub>everyday imagination</LogoSub>
+            </UntyledLink>
             </HeaderLogo>
             <HeaderRight>
                 <StyledLink to="/">

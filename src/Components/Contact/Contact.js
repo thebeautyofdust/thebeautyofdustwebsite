@@ -19,7 +19,16 @@ const ContactText = styled('div')`
   font-family: 'Cormorant Garamond', serif;
   padding: 1px;
   text-align: center;
+  font-weight: bold;
 `;
+const ContactSubText = styled('div')`
+  font-family: 'Cormorant Garamond', serif;
+  padding: 1px;
+  text-align: center;
+  max-width: 350px;
+  font-weight: 200;
+`;
+
 
 const Padding = styled('div')`
   padding-top: 10px;
@@ -33,11 +42,16 @@ function Contact() {
       <Wrapper>
         <ContactText>
           <ContactText><i>we continue to add new content</i></ContactText>
+          <ContactText><i>and opportunities to collaborate with artists</i></ContactText>
           <Padding />
-          <ContactText>send us a message to</ContactText>
-          <ContactText>join our mailing list</ContactText>
-          <ContactText>submit your piece</ContactText> 
-          <ContactText>collaborate with us</ContactText>
+          <Padding />
+          <ContactSubText>send us a message to:</ContactSubText>
+          <ContactSubText>join our mailing list | explore collaborating with us</ContactSubText>
+          <ContactSubText>[ i.e. poetry submission, videography, editing, other...]</ContactSubText> 
+          <Padding />
+          <Padding />
+          <Padding />
+          <Padding />
         </ContactText>
         <ContactFrom />
       </Wrapper>

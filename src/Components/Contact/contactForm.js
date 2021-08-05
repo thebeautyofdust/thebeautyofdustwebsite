@@ -36,7 +36,9 @@ const Button = styled('button')`
   border-radius: 0;
   padding: 10px;
   margin-top: 20px;
-  border: 3px solid black;
+  border: 1px solid black;
+  background: black;
+  color: white;
   -webkit-appearance: none;
 `;
 

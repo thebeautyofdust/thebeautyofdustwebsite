@@ -16,10 +16,11 @@ const Form = styled('form')`
 
 const ContactLabel = styled('label')`
   font-family: 'Cormorant Garamond', serif;
+  margin-left: 9px;
 `;
 const ContactInput = styled('input')`
   font-family: 'Cormorant Garamond', serif;
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 9px;
   margin-top: 5px;
   margin-bottom: 10px;

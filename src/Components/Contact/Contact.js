@@ -6,7 +6,7 @@ import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
 import ContactFrom from './contactForm';
 
-const Wrapper = styled(ContentWrapper)`
+const Wrapper = styled('div')`
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -19,13 +19,13 @@ const ContactText = styled('div')`
   font-family: 'Cormorant Garamond', serif;
   padding: 1px;
   text-align: center;
-  font-weight: bold;
+  font-weight: bold;    
+  font-size: 45px;
 `;
 const ContactSubText = styled('div')`
   font-family: 'Cormorant Garamond', serif;
   padding: 1px;
   text-align: center;
-  max-width: 350px;
   font-weight: 200;
 `;
 
@@ -34,27 +34,42 @@ const Padding = styled('div')`
   padding-top: 10px;
 `;
 
+const TextWrapper = styled('div')`
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  padding-top: 20px;
+  max-width: 600px;
+`;
+
+const ContactSubTextWrapper = styled('div')`
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 60px;
+`;
+
 function Contact() {
   return (
     <ThemeProvider theme={theme}>
       <Header activePage="contact"/>
       <GlobalStyles />
+      <ContentWrapper>
+      <TextWrapper>
+        <ContactText>find out about new content and opportunities to collaborate</ContactText>
+      </TextWrapper>
+      <ContactSubTextWrapper>
+        <ContactSubText>send us a message to: join our mailing list | explore collaborating with us [i.e. poetry submission, videography, editing, other...]</ContactSubText> 
+      </ContactSubTextWrapper>
       <Wrapper>
-        <ContactText>
-          <ContactText><i>we continue to add new content</i></ContactText>
-          <ContactText><i>and opportunities to collaborate with artists</i></ContactText>
-          <Padding />
-          <Padding />
-          <ContactSubText>send us a message to:</ContactSubText>
-          <ContactSubText>join our mailing list | explore collaborating with us</ContactSubText>
-          <ContactSubText>[ i.e. poetry submission, videography, editing, other...]</ContactSubText> 
-          <Padding />
-          <Padding />
-          <Padding />
-          <Padding />
-        </ContactText>
         <ContactFrom />
       </Wrapper>
+      </ContentWrapper>
       <Footer />
     </ThemeProvider>
   );

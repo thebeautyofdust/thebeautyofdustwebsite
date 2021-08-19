@@ -4,25 +4,54 @@ import { GlobalStyles, ContentWrapper } from '../../Common/global';
 import { theme } from '../../Common/theme';
 import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
+import ContactFrom from './contactForm';
 
-const Wrapper = styled(ContentWrapper)`
+const Wrapper = styled('div')`
   display: flex;
   flex: 1;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  max-width: 350px;
+  margin: auto;
 `;
 
 const ContactText = styled('div')`
   font-family: 'Cormorant Garamond', serif;
   padding: 1px;
+  text-align: center;
+  font-weight: bold;    
+  font-size: 45px;
+`;
+const ContactSubText = styled('div')`
+  font-family: 'Cormorant Garamond', serif;
+  padding: 1px;
+  text-align: center;
+  font-weight: 200;
 `;
 
-const Email = styled('div')`
-  font-family: 'Cormorant Garamond', serif;
-  padding-top: 20px;
-`;
+
 const Padding = styled('div')`
   padding-top: 10px;
+`;
+
+const TextWrapper = styled('div')`
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  padding-top: 20px;
+  max-width: 600px;
+`;
+
+const ContactSubTextWrapper = styled('div')`
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 60px;
 `;
 
 function Contact() {
@@ -30,17 +59,17 @@ function Contact() {
     <ThemeProvider theme={theme}>
       <Header activePage="contact"/>
       <GlobalStyles />
+      <ContentWrapper>
+      <TextWrapper>
+        <ContactText>find out about new content and opportunities to collaborate</ContactText>
+      </TextWrapper>
+      <ContactSubTextWrapper>
+        <ContactSubText>send us a message to: join our mailing list | explore collaborating with us [i.e. poetry submission, videography, editing, other...]</ContactSubText> 
+      </ContactSubTextWrapper>
       <Wrapper>
-        <ContactText>
-          <ContactText><i>we continue to add new content</i></ContactText>
-          <Padding />
-          <ContactText>send us an email to</ContactText>
-          <ContactText>join our mailing list</ContactText>
-          <ContactText>submit your piece</ContactText> 
-          <ContactText>collaborate with us</ContactText>
-          <Email><a href="mailto:thebeautyofdust@gmail.com">thebeautyofdust@gmail.com</a></Email>
-        </ContactText>
+        <ContactFrom />
       </Wrapper>
+      </ContentWrapper>
       <Footer />
     </ThemeProvider>
   );

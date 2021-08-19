@@ -1,79 +1,157 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import axios from 'axios';
 
-class ContactForm extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: "",
-      email: "",
-      message: "",
-      status: "Submit"
-    };   
-  } 
-  handleSubmit(event) {
-    event.preventDefault();  
-    this.setState({ status: "Sending" });  
-    axios({
-      method: "POST",
-      url: "http://localhost:5000/send",
-      data: this.state,
-    }).then((response) => {
-      if (response.data.status === "sent") {
-        alert("Message Sent");
-        this.setState({ name: "", email: "", message: "", status: "Submit" });
-      } else if (response.data.status === "failed") {
-        alert("Message Failed");
-      }
+
+const Wrapper = styled('div')`
+`;
+
+const Form = styled('form')`
+  display: flex;
+  flex-direction: column;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 0 10px;
+`;
+
+const ContactLabel = styled('label')`
+  font-family: 'Cormorant Garamond', serif;
+  margin-left: 9px;
+`;
+const ContactInput = styled('input')`
+  font-family: 'Cormorant Garamond', serif;
+  border: 1px solid white;
+  padding: 9px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+
+  &:focus-visible, &:focus {
+    border: 1px solid black;
+  }
+`;
+
+const Button = styled('button')`
+  font-family: 'Cormorant Garamond', serif;    
+  background: none;
+  border-radius: 0;
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid black;
+  background: black;
+  color: white;
+  -webkit-appearance: none;
+`;
+
+const ResponseText = styled('p')`
+  font-family: 'Cormorant Garamond', serif;    
+  font-size: 10px;
+  &.success {
+
+  }
+  &.error {
+    color: red;
+  }
+`;
+
+
+
+const ContactForm = () => {
+  const [state, setState] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const [result, setResult] = useState(null);
+
+  const sendEmail = event => {
+    event.preventDefault();
+    axios
+      .post('/send', { ...state })
+      .then(response => {
+        setResult(response.data);
+        setState({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      })
+      .catch(() => {
+        setResult({
+          success: false,
+          message: 'Something went wrong. Try again later'
+        });
+      });
+  };
+
+  const onInputChange = event => {
+    const { name, value } = event.target;
+
+    setState({
+      ...state,
+      [name]: value
     });
-  }
-  handleChange(event) {
-    const field = event.target.id;
-    if (field === "name") {
-      this.setState({ name: event.target.value });
-    } else if (field === "email") {
-      this.setState({ email: event.target.value });
-    } else if (field === "message") {
-      this.setState({ message: event.target.value });
-    }
-  }
-  render() {
-    let buttonText = this.state.status;
-    return (      
-        <form onSubmit={this.handleSubmit.bind(this)} method="POST">
-            <div>
-            <label htmlFor="name">Name:</label>
-            <input
-                type="text"
-                id="name"
-                value={this.state.name}
-                onChange={this.handleChange.bind(this)}
-                required
-            />
-            </div>
-            <div>
-            <label htmlFor="email">Email:</label>
-            <input
-                type="email"
-                id="email"
-                value={this.state.email}
-                onChange={this.handleChange.bind(this)}
-                required
-            />
-            </div>
-            <div>
-            <label htmlFor="message">Message:</label>
-            <textarea
-                id="message"
-                value={this.state.message}
-                onChange={this.handleChange.bind(this)}
-                required
-            />
-            </div>
-            <button type="submit">{buttonText}</button>
-        </form>      
-    );
-}
-}
+  };
+
+  return (
+    <Wrapper>
+
+      <Form onSubmit={sendEmail}>
+        <ContactLabel>Full Name</ContactLabel>
+        <ContactInput
+          type="text"
+          name="name"
+          value={state.name}
+          placeholder="Enter your full name"
+          onChange={onInputChange}
+        />
+        <ContactLabel>Email</ContactLabel>
+        <ContactInput
+          type="text"
+          name="email"
+          value={state.email}
+          placeholder="Enter your email"
+          onChange={onInputChange}
+        />
+        <ContactLabel>Subject</ContactLabel>
+        <ContactInput
+          type="text"
+          name="subject"
+          value={state.subject}
+          placeholder="Enter subject"
+          onChange={onInputChange}
+        />
+        <ContactLabel>Message</ContactLabel>
+        <ContactInput
+          as="textarea"
+          name="message"
+          value={state.message}
+          rows="3"
+          placeholder="Enter your message"
+          onChange={onInputChange}
+        />
+        {
+          result && result.success === 'success' ? 
+            (
+            <ResponseText className="error">
+              {result.message}
+            </ResponseText>
+            ) : 
+            (<Button variant="primary" type="submit">
+              Submit
+            </Button>)
+        }
+      </Form>
+      {(result && result.success === 'error') ?
+        <ResponseText className="error">
+          {result.message}
+        </ResponseText>
+      : null}
+    </Wrapper>
+  );
+};
 
 export default ContactForm;

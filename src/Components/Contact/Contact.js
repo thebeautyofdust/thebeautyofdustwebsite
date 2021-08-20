@@ -20,7 +20,7 @@ const ContactText = styled('div')`
   padding: 1px;
   text-align: center;
   font-weight: bold;    
-  font-size: 45px;
+  font-size: 35px;
 `;
 const ContactSubText = styled('div')`
   font-family: 'Cormorant Garamond', serif;

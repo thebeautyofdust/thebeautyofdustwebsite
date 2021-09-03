@@ -64,7 +64,7 @@ function Contact() {
         <ContactText>find out about new content and opportunities to collaborate</ContactText>
       </TextWrapper>
       <ContactSubTextWrapper>
-        <ContactSubText>send us a message to: join our mailing list | explore collaborating with us [i.e. poetry submission, videography, editing, other...]</ContactSubText> 
+        <ContactSubText>send us a message if you would like to join our mailing list or to collaborate with us [i.e. poetry submission, videography, editing, other...]</ContactSubText> 
       </ContactSubTextWrapper>
       <Wrapper>
         <ContactFrom />

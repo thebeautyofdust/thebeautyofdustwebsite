@@ -4,8 +4,6 @@ import styled, { keyframes } from 'styled-components';
 import shesaid from '../../images/she-said.jpg';
 import path from '../../images/trees.jpg';
 import lady from '../../images/lady.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowAltLeft, faLongArrowAltRight} from '@fortawesome/free-solid-svg-icons'
 import { getFirstPiece, getNextPiece, getPrevPiece, getImageByKey } from './helpers';
 import { Chevron } from '../../Common/global';
 

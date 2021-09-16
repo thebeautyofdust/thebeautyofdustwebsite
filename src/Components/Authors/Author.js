@@ -24,8 +24,8 @@ const Wrapper = styled('div')`
     width: 100vw;
   }
   @media ${devices.tablet} { 
-    width: 49vw;   
-    height: 49vw;
+    width: 43vw;   
+    height: 43vw;
   }
   @media ${devices.laptopM} { 
     width: 30vw;   

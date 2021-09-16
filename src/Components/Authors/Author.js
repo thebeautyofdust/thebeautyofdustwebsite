@@ -16,20 +16,16 @@ const Wrapper = styled('div')`
   color: #282828;
   flex-direction: column;
   padding: 10px;
-  justify-content: center;
   align-items: center;
   width: 100%;
   object-fit: cover;
   @media ${devices.mobileL} { 
     width: 100vw;
+    height: 100vw;
   }
   @media ${devices.tablet} { 
-    width: 43vw;   
-    height: 43vw;
-  }
-  @media ${devices.laptopM} { 
-    width: 30vw;   
-    height: 30vw;
+    width: 49.5vw;   
+    height: 49.5vw;
   }
 `
 
@@ -43,6 +39,8 @@ const Border = styled('div')`
   justify-content: center;
   display: flex;
   align-items: center;
+  width: 100%;
+  height: 100%;
 `;
 
 const SmallHeading = styled('h4')`

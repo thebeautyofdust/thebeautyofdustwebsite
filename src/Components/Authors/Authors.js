@@ -15,7 +15,6 @@ const BodyContainer = styled('div')`
   flex-wrap: wrap;
   padding: 0.5vw;
   padding-top: 50px;
-  justify-content: center;
 `
 
 function Authors() {

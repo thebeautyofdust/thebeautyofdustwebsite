@@ -1,54 +1,105 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { GlobalStyles, ContentWrapper } from '../../Common/global';
+import { GlobalStyles } from '../../Common/global';
 import { theme } from '../../Common/theme';
 import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
-import { GetAuthorById } from './helpers';
+
+import youtube from '../../images/youtube.svg';
+import website from '../../images/website.svg';
+import { devices } from '../../Common/devices';
+
 
 const Wrapper = styled('div')`
-  display: flex;
-  height: calc(100vh - 150px);
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;  
   font-family: 'Cormorant Garamond', serif;
-
+  display: flex;    
+  color: #282828;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  width: 100%;
+  object-fit: cover;
+  @media ${devices.mobileL} { 
+    width: 100vw;
+    height: 100vw;
+  }
+  @media ${devices.tablet} { 
+    width: 49.5vw;   
+    height: 49.5vw;
+  }
 `
 
-const CommingSoon = styled('div')`
-  font-size: 30px;
-  padding-top: 10px;
-`
+const Border = styled('div')`
+  border: 1.5px solid #282828;
+  text-align: center;
+  min-width: 320px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+
+const SmallHeading = styled('h4')`
+  font-family: 'Cormorant Garamond', serif;
+  margin: 0;
+  max-width: 295px;
+  font-size: 17px;
+`;
+
+const Heading = styled('h1')`
+  font-family: 'Cormorant Garamond', serif;    
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 29px;
+`;
+
+const Icon = styled('div')`
+  background-image: url(${youtube});
+  width: 50px;
+  height: 35px;
+  background-size: contain;
+  background-repeat: no-repeat;
+`; 
+
+const WebsiteIcon = styled(Icon)`
+  background-image: url(${website});
+  width: 33px;
+`;
+
+const StyledLink = styled('a')`
+  font-family: 'Cormorant Garamond', serif;    
+  cuursor: pointer;
+  padding: 0 10px;
+`;
+
+const IconWrapper = styled('div')`
+  display: flex;    
+  flex-direction: row;
+  padding-top: 20px;
+  justify-content: center;
+  align-items: center;
+`;
 
 
+function Author(props) {
 
-class Author extends React.Component {
-  constructor(props) {
-    super(props);
-
-    const id = props.match.params.id
-    this.state = {
-      author: GetAuthorById(id)
-    }
-  }
-
-  render() {
-    const {name, author} = this.state.author;
-
-    return (
-        <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Header/>
-        <Wrapper>
-            more about {name}
-            <CommingSoon>coming soon</CommingSoon>
-        </Wrapper>
-        <Footer />
-    </ThemeProvider>
-    );
-  }
+  return (
+    <Wrapper>
+      <Border>
+        <SmallHeading></SmallHeading>
+        <Heading>{props.name}</Heading>
+        {props.paragraph.map(paragraph => <SmallHeading>{paragraph}</SmallHeading>)}
+        <IconWrapper>
+          {props.youtube && <StyledLink target="_blank" href={props.youtube}><Icon /> </StyledLink>}
+          {props.website && <StyledLink target="_blank" href={props.website}><WebsiteIcon /></StyledLink> }
+        </IconWrapper>
+      </Border>
+    </Wrapper>
+  );
 }
 
 export default Author;

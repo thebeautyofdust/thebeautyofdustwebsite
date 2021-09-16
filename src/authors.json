@@ -1,37 +1,42 @@
 [
     {
-        "id": "nc",
-        "name": "Naomi Compton",
-        "paragraph": [],
-        "imageSrc": "https://lh3.googleusercontent.com/hBS2hnvZsy8Nd-mURBx3mBUIDqj20Cg3-ZpyHQFHCpRkrC_BogwmHUPh_wQSrOzGgB4j-hBV5_YpZcO8veoSuOtyrpzAt_QLYtTMP-P49GClwI3o83_4wvzoWPjWyB8xPyKLrynQPw=w500",
-        "categories": ["spokenword"]
-    },
-    {
         "id": "jb",
         "name": "Justin Blass",
-        "paragraph": [],
+        "paragraph": ["For more of Justin’s work check out his podcast"],
         "imageSrc": "https://lh3.googleusercontent.com/hBS2hnvZsy8Nd-mURBx3mBUIDqj20Cg3-ZpyHQFHCpRkrC_BogwmHUPh_wQSrOzGgB4j-hBV5_YpZcO8veoSuOtyrpzAt_QLYtTMP-P49GClwI3o83_4wvzoWPjWyB8xPyKLrynQPw=w500",
-        "categories": ["spokenword", "trees"]
+        "categories": ["spokenword", "trees"],
+        "website": "https://mynameiscourage.podbean.com/e/constellations-1628845998/"
     },
     {
         "id": "ds",
         "name": "Danielle Simmons",
-        "paragraph": [],
+        "paragraph": ["Discover more of Danielle’s work"],
         "imageSrc": "https://lh3.googleusercontent.com/hBS2hnvZsy8Nd-mURBx3mBUIDqj20Cg3-ZpyHQFHCpRkrC_BogwmHUPh_wQSrOzGgB4j-hBV5_YpZcO8veoSuOtyrpzAt_QLYtTMP-P49GClwI3o83_4wvzoWPjWyB8xPyKLrynQPw=w500",
-        "categories": ["spokenword", "trees"]
+        "categories": ["spokenword", "trees"],
+        "youtube": "https://www.youtube.com/user/missdmbennett"
     },
     {
         "id": "sc",
         "name": "Strahan Coleman",
-        "paragraph": [],
+        "paragraph": ["Connect with Strahan’s work through"],
         "imageSrc": "https://lh3.googleusercontent.com/hBS2hnvZsy8Nd-mURBx3mBUIDqj20Cg3-ZpyHQFHCpRkrC_BogwmHUPh_wQSrOzGgB4j-hBV5_YpZcO8veoSuOtyrpzAt_QLYtTMP-P49GClwI3o83_4wvzoWPjWyB8xPyKLrynQPw=w500",
-        "categories": ["spokenword", "trees"]
+        "categories": ["spokenword", "trees"],
+        "website": "https://www.commonerscommunion.com/"
     },
     {
         "id": "sdt",
         "name": "Stevie Davis-Tana",
-        "paragraph": [],
+        "paragraph": ["Stevie’s piece Celebration is from her collection of work Kō - A spoken word poetry visual album."],
         "imageSrc": "https://lh3.googleusercontent.com/hBS2hnvZsy8Nd-mURBx3mBUIDqj20Cg3-ZpyHQFHCpRkrC_BogwmHUPh_wQSrOzGgB4j-hBV5_YpZcO8veoSuOtyrpzAt_QLYtTMP-P49GClwI3o83_4wvzoWPjWyB8xPyKLrynQPw=w500",
-        "categories": ["spokenword", "trees"]
+        "categories": ["spokenword", "trees"],
+        "website": " https://www.projectko.com"
+    },
+    {
+        "id": "nc",
+        "name": "Naomi Compton",
+        "paragraph": ["Founder of thebeautyofdust.com.", "To learn more about the story behind the beauty of dust check out"],
+        "imageSrc": "https://lh3.googleusercontent.com/hBS2hnvZsy8Nd-mURBx3mBUIDqj20Cg3-ZpyHQFHCpRkrC_BogwmHUPh_wQSrOzGgB4j-hBV5_YpZcO8veoSuOtyrpzAt_QLYtTMP-P49GClwI3o83_4wvzoWPjWyB8xPyKLrynQPw=w500",
+        "categories": ["spokenword"],
+        "youtube": "https://www.youtube.com/watch?v=t9hSt-O0Lzs"
     }
 ]

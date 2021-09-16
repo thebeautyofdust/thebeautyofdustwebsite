@@ -30,7 +30,7 @@ const Wrapper = styled('div')`
 `
 
 const Border = styled('div')`
-  border: 2px solid #282828;
+  border: 1.5px solid #282828;
   text-align: center;
   min-width: 320px;
   min-height: 320px;
@@ -47,16 +47,15 @@ const SmallHeading = styled('h4')`
   font-family: 'Cormorant Garamond', serif;
   margin: 0;
   max-width: 295px;
-  font-size: 14px;
+  font-size: 17px;
 `;
 
 const Heading = styled('h1')`
   font-family: 'Cormorant Garamond', serif;    
   margin: 0;
   padding-bottom: 10px;
-  font-size: 24px;
+  font-size: 29px;
 `;
-
 
 const Icon = styled('div')`
   background-image: url(${youtube});

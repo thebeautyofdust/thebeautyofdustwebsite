@@ -95,8 +95,8 @@ function Author(props) {
         <Heading>{props.name}</Heading>
         {props.paragraph.map(paragraph => <SmallHeading>{paragraph}</SmallHeading>)}
         <IconWrapper>
-          {props.youtube && <StyledLink href={props.youtube}><Icon /> </StyledLink>}
-          {props.website && <StyledLink href={props.website}><WebsiteIcon /></StyledLink> }
+          {props.youtube && <StyledLink target="_blank" href={props.youtube}><Icon /> </StyledLink>}
+          {props.website && <StyledLink target="_blank" href={props.website}><WebsiteIcon /></StyledLink> }
         </IconWrapper>
       </Border>
     </Wrapper>

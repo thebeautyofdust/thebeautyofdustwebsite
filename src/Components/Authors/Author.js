@@ -49,12 +49,14 @@ const SmallHeading = styled('h4')`
   font-family: 'Cormorant Garamond', serif;
   margin: 0;
   max-width: 295px;
+  font-size: 14px;
 `;
 
 const Heading = styled('h1')`
   font-family: 'Cormorant Garamond', serif;    
   margin: 0;
   padding-bottom: 10px;
+  font-size: 24px;
 `;
 
 
@@ -80,7 +82,7 @@ const StyledLink = styled('a')`
 const IconWrapper = styled('div')`
   display: flex;    
   flex-direction: row;
-  padding-top: 10px;
+  padding-top: 20px;
   justify-content: center;
   align-items: center;
 `;

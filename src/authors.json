@@ -1,14 +1,5 @@
 [
     {
-        "id": "nc",
-        "name": "Naomi Compton",
-        "paragraph": ["Founder of thebeautyofdust.com.", "To learn more about the story behind the beauty of dust check out"],
-        "imageSrc": "https://lh3.googleusercontent.com/hBS2hnvZsy8Nd-mURBx3mBUIDqj20Cg3-ZpyHQFHCpRkrC_BogwmHUPh_wQSrOzGgB4j-hBV5_YpZcO8veoSuOtyrpzAt_QLYtTMP-P49GClwI3o83_4wvzoWPjWyB8xPyKLrynQPw=w500",
-        "categories": ["spokenword"],
-        "youtube": "https://www.youtube.com/watch?v=t9hSt-O0Lzs",
-        "text": ""
-    },
-    {
         "id": "jb",
         "name": "Justin Blass",
         "paragraph": ["For more of Justin’s work check out his podcast"],
@@ -40,5 +31,13 @@
         "imageSrc": "https://lh3.googleusercontent.com/hBS2hnvZsy8Nd-mURBx3mBUIDqj20Cg3-ZpyHQFHCpRkrC_BogwmHUPh_wQSrOzGgB4j-hBV5_YpZcO8veoSuOtyrpzAt_QLYtTMP-P49GClwI3o83_4wvzoWPjWyB8xPyKLrynQPw=w500",
         "categories": ["spokenword", "trees"],
         "website": " https://www.projectko.com"
+    },
+    {
+        "id": "nc",
+        "name": "Naomi Compton",
+        "paragraph": ["Founder of thebeautyofdust.com.", "To learn more about the story behind the beauty of dust check out"],
+        "imageSrc": "https://lh3.googleusercontent.com/hBS2hnvZsy8Nd-mURBx3mBUIDqj20Cg3-ZpyHQFHCpRkrC_BogwmHUPh_wQSrOzGgB4j-hBV5_YpZcO8veoSuOtyrpzAt_QLYtTMP-P49GClwI3o83_4wvzoWPjWyB8xPyKLrynQPw=w500",
+        "categories": ["spokenword"],
+        "youtube": "https://www.youtube.com/watch?v=t9hSt-O0Lzs"
     }
 ]

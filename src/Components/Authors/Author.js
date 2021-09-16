@@ -19,11 +19,9 @@ const Wrapper = styled('div')`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vw;
   object-fit: cover;
   @media ${devices.mobileL} { 
     width: 100vw;
-    height: 100vw;
   }
   @media ${devices.tablet} { 
     width: 49vw;   
@@ -43,7 +41,6 @@ const Border = styled('div')`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 230px;
   display: flex;
   align-items: center;
 `;

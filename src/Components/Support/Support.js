@@ -27,7 +27,7 @@ const Padding = styled('div')`
 `;
 
 function Support() {
-  mixpanel.init('55bc83f2f66404f4e75e43ca1cecaf6f', {debug: true}); 
+  mixpanel.init('55bc83f2f66404f4e75e43ca1cecaf6f'); 
   mixpanel.track(`View Support`);
   return (
     <ThemeProvider theme={theme}>

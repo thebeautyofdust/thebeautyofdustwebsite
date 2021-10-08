@@ -56,7 +56,7 @@ const ContactSubTextWrapper = styled('div')`
 `;
 
 function Contact() {
-  mixpanel.init('55bc83f2f66404f4e75e43ca1cecaf6f', {debug: true}); 
+  mixpanel.init('55bc83f2f66404f4e75e43ca1cecaf6f'); 
   mixpanel.track(`View Contact`);
   return (
     <ThemeProvider theme={theme}>

@@ -286,7 +286,7 @@ class Piece extends React.Component {
     const {id, title, author, interviewUrl, authorId, firstName, youtubeUrl} = this.state.piece;
     const { activeSection } = this.state;
 
-    mixpanel.init('55bc83f2f66404f4e75e43ca1cecaf6f', {debug: true}); 
+    mixpanel.init('55bc83f2f66404f4e75e43ca1cecaf6f'); 
     mixpanel.track(`View Piece ${title}`);
     return (
         <ThemeProvider theme={theme}>

@@ -348,7 +348,7 @@ class Piece extends React.Component {
                   </IFrame>
                 </InterviewContainer>
               }
-              <StyledLink to={`/author/${authorId}`}>
+              <StyledLink to={`/authors`}>
                 <GoToArtist>learn more about {firstName}</GoToArtist>
               </StyledLink>
             </LearnMoreContainer>

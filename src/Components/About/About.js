@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
+import mixpanel from 'mixpanel-browser';
 
 const Wrapper = styled(ContentWrapper)`
   display: flex;
@@ -45,6 +46,8 @@ const Box = styled('div')`
 `;
 
 function About() {
+  mixpanel.init('55bc83f2f66404f4e75e43ca1cecaf6f'); 
+  mixpanel.track(`View About`);
   return (
     <ThemeProvider theme={theme}>
       <Header activePage="about" />

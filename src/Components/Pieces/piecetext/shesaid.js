@@ -4,26 +4,15 @@ import styled from 'styled-components';
 import { devices } from '../../../Common/devices';
 
 const BodyContainer = styled('div')`
-    margin-top: 10px;    
-    width: 100vw;
-    padding: 0 5vw;
-    flex-direction: row;
-    display: flex;
-    left: 0;
-    top: calc(50vh - 210px);
-    position: absolute;
-    overflow-y: scroll;
-
-    div {
-        padding: 0;
-    }
-    p {
-        margin: 0;
-    }
+   
 `
 
 const Section = styled('section')`
-    min-width: 340px;
+    text-align: center;
+    margin: 40px;
+    p {
+        margin: 0;
+    }
 `;
 
 function Text() {

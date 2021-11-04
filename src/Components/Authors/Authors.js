@@ -7,6 +7,7 @@ import Footer from '../Layout/Footer/Footer';
 import Author from './Author';
 
 import authors from '../../authors.json';
+import mixpanel from 'mixpanel-browser';
 
 
 const BodyContainer = styled('div')`
@@ -18,7 +19,8 @@ const BodyContainer = styled('div')`
 `
 
 function Authors() {
-  console.log('authors', authors)
+  mixpanel.init('55bc83f2f66404f4e75e43ca1cecaf6f'); 
+  mixpanel.track(`View Authors`);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />

@@ -13,6 +13,7 @@ import SheSaidText from './piecetext/shesaid';
 import FreeWriteText from './piecetext/freewrite';
 import IntoTheWoodsText from './piecetext/intothewoods';
 import NeverAloneText from './piecetext/neveralone';
+import mixpanel from 'mixpanel-browser';
 
 const Wrapper = styled('div')`
   display: flex;
@@ -79,47 +80,29 @@ const PieceText = styled('p')`
 `;
 
 const Section = styled('section')`
-  position: absolute;
   display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
-  height: calc(100vh - 50px);
+  min-height: 100vh;
   flex-direction: column;
-  display:none;
-  opacity: 0;
-  transition: opacity .5s ease-in-out;
-  -moz-transition: opacity .5s ease-in-out;
-  -webkit-transition: opacity .5s ease-in-out;
+  align-items: center;
+  justify-content: center;
+`;
 
-  &.active {
-    opacity: 1;
-    display:flex;
-    transition: opacity 1.5s ease-in-out;
-    -moz-transition: opacity 1.5s ease-in-out;
-    -webkit-transition: opacity 1.5s ease-in-out;
-  }
-
-  &:last-child {
-    flex-direction: column;
-  }
+const ContentSection = styled('section')`
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const VideoContainer  = styled('div')`
     width: 100vw;
-    height: calc(100vh - 50px);
-    background: black;
-    z-index:5;
-`;
-
-
-
-const HelpMessage = styled('div')`
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 12px;
-  padding: 0 10px;
-  text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    min-height: 100vh;
 `;
 
 const LearnMoreContainer = styled('div')`
@@ -131,29 +114,11 @@ const LearnMoreContainer = styled('div')`
 }
 `;
 
-const DownArrow = styled(Arrow)`
-  position: fixed;
-  right: 4vw;
-  bottom: 4vh;
-  z-index:10;
-  cursor: pointer;
-`;
-
-const UpArrow = styled(Arrow)`
-  position: fixed;
-  right: calc(4vw - 11px);
-  top: calc(4vh + 50px);
-  z-index:10;
-  cursor: pointer;
-`;
-
 const QuestionContainer = styled('div')`
   font-family: 'Cormorant Garamond', serif;
-  bottom: 10vh;
-  left: 5vw;
-  position: absolute;
   font-style: italic;
   font-size: 13px;
+  padding: 10px;
 `;
 
 const InterviewContainer = styled('div')`
@@ -166,21 +131,12 @@ const InterviewContainer = styled('div')`
   font-size: 20px;
 `;
 
-const InterviewVideoContainer  = styled('video')`
-    min-width: 50vw;
-    height: auto;
-    z-index: 5;    
-    margin: 2em 0;
-`;
-
 const IFrame = styled('iframe')`
   max-width: 100% !important;
   margin: 2em 0;
 `;
 
 const IFramePiece = styled('iframe')`
-  width: 100% !important;
-  height: 100% !important;
 `;
 
 function parseQuery(queryString) {
@@ -211,61 +167,6 @@ class Piece extends React.Component {
     this.videoRef = React.createRef();
   }
 
-  _handleArrowKey = (event) => {
-    console.log(event);
-    const { activeSection } = this.state;
-    
-    if(event.keyCode == 40 && activeSection < 3)  { 
-      event.preventDefault();
-      this.moveDownSection(activeSection)
-    } 
-    else if (event.keyCode == 38 && activeSection > 0) { 
-      event.preventDefault();
-      this.moveUpSection(activeSection)
-    } 
-  }
-
-  moveDownSection = (activeSection) => { 
-    this.setState({ activeSection: activeSection + 1 })
-  }
-
-  moveUpSection = (activeSection) => { 
-    this.setState({ activeSection: activeSection - 1 })
-  }
-
-  componentWillMount = () => {
-    document.addEventListener("keydown", this._handleArrowKey, false);
-  }
-
-  componentWillUnmount = () => {
-    document.removeEventListener("keydown", this._handleArrowKey, false);
-  }
-
-  componentDidUpdate = () => {
-    const { activeSection } = this.state;
-    if (activeSection == 1) {
-      // this.videoRef.current.play();
-    }
-  }
-
-  setActiveSection = (section) => {
-    this.setState({ activeSection: section })
-  }
-
-  upClick = () => {
-    const { activeSection } = this.state;
-    if( activeSection > 0)  { 
-      this.moveUpSection(activeSection)
-    } 
-  }
-
-  downClick = () => {
-    const { activeSection } = this.state;
-    if( activeSection < 3)  { 
-      this.moveDownSection(activeSection)
-    } 
-  }
-
   getPieceText = (id) => {
     if (id === 'shesaid') {
       return <SheSaidText />
@@ -285,32 +186,27 @@ class Piece extends React.Component {
     const {id, title, author, interviewUrl, authorId, firstName, youtubeUrl} = this.state.piece;
     const { activeSection } = this.state;
 
+    mixpanel.init('55bc83f2f66404f4e75e43ca1cecaf6f'); 
+    mixpanel.track(`View Piece ${title}`);
     return (
         <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Header />
         <Wrapper>
-          {activeSection > 0 && <UpArrow className="up" color={activeSection === 1 && 'white'} onClick={this.upClick} />}
-          {activeSection < 3 && <DownArrow className="down" color={activeSection === 1 && 'white'} onClick={this.downClick} />}
-          <Section className={activeSection == 0 ? 'active' : ''}>
+          {/* {activeSection > 0 && <UpArrow className="up" color={activeSection === 1 && 'white'} onClick={this.upClick} />}
+          {activeSection < 3 && <DownArrow className="down" color={activeSection === 1 && 'white'} onClick={this.downClick} />} */}
+          <Section>
             <TopText>
                 <Title>{title}</Title>
                 <By>{author}</By>
-                <HelpMessage>
-                  press the down key or tap the down arrow to move through the piece, or select a section below
-                </HelpMessage>
             </TopText>
-            <ContentsContainer>
-              <ContentsItem onClick={() => this.setActiveSection(1)}>piece video</ContentsItem>
-              <ContentsItem onClick={() => this.setActiveSection(2)}>piece text</ContentsItem>
-              <ContentsItem onClick={() => this.setActiveSection(3)}>interview</ContentsItem>
-            </ContentsContainer>
+            {/* <ContentsContainer>
+              <ContentsItem>piece video</ContentsItem>
+              <ContentsItem>piece text</ContentsItem>
+              <ContentsItem>interview</ContentsItem>
+            </ContentsContainer> */}
           </Section>
-          <Section className={activeSection == 1 ? 'active' : ''}>
-             {/* <VideoContainer ref={this.videoRef} controls>
-               {this.getVideo(id)}
-                Your browser does not support the video tag.
-            </VideoContainer> */}
+          <ContentSection>
             <VideoContainer>
             <IFramePiece 
               width="560"
@@ -322,17 +218,16 @@ class Piece extends React.Component {
               allowfullscreen="allowfullscreen">
             </IFramePiece>
             </VideoContainer>
-          </Section>
-          <Section className={activeSection == 2 ? 'active' : ''}>
-            <PieceText>
-             {this.getPieceText(id)}
-            </PieceText>
-
+          </ContentSection>
+          <ContentSection>
             <QuestionContainer>
               Take note of your response after hearing the piece, did any part stand out? <br/>Could it relate to your context or role?
             </QuestionContainer>
-          </Section >
-          <Section className={activeSection == 3 ? 'active' : ''}>
+            <PieceText>
+             {this.getPieceText(id)}
+            </PieceText>
+          </ContentSection >
+          <Section>
             <LearnMoreContainer>
               {interviewUrl && 
                 <InterviewContainer>
@@ -348,7 +243,7 @@ class Piece extends React.Component {
                   </IFrame>
                 </InterviewContainer>
               }
-              <StyledLink to={`/author/${authorId}`}>
+              <StyledLink to={`/authors`}>
                 <GoToArtist>learn more about {firstName}</GoToArtist>
               </StyledLink>
             </LearnMoreContainer>

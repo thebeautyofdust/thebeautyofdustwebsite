@@ -4,7 +4,7 @@ import { HashRouter } from "react-router-dom";
 import Routes from "./Routes";
 import "./index.css";
 
-class App extends React.Component{
+class App extends React.Component {
     render(){
         return(
             <HashRouter >
@@ -13,4 +13,4 @@ class App extends React.Component{
         )
     }
 }
-ReactDOM.render(<App/>, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));

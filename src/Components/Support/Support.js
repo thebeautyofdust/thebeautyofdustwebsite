@@ -4,6 +4,7 @@ import { GlobalStyles, ContentWrapper } from '../../Common/global';
 import { theme } from '../../Common/theme';
 import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
+import mixpanel from 'mixpanel-browser';
 
 const Wrapper = styled(ContentWrapper)`
   display: flex;
@@ -26,6 +27,8 @@ const Padding = styled('div')`
 `;
 
 function Support() {
+  mixpanel.init('55bc83f2f66404f4e75e43ca1cecaf6f'); 
+  mixpanel.track(`View Support`);
   return (
     <ThemeProvider theme={theme}>
       <Header activePage="support"/>

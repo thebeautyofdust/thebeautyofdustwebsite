@@ -119,6 +119,7 @@ const QuestionContainer = styled('div')`
   font-style: italic;
   font-size: 13px;
   padding: 10px;
+  text-align: center;
 `;
 
 const InterviewContainer = styled('div')`
